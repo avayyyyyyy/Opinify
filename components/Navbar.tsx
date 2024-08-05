@@ -11,9 +11,10 @@ const Navbar = () => {
         Opinify
       </div>
       <div className="flex gap-2">
-        {/* <Button variant={"outline"}>LogIn</Button>
-        <Button variant={"secondary"}>SignUp</Button> */}
-        <Button variant={"secondary"}>Wishlist 🪄</Button>
+        {/* <Button variant={"outline"}>Log in</Button>
+        <Button variant={"secondary"}>Sign up</Button> */}
+        {/* <Button variant={"secondary"}>Wishlist 🪄</Button> */}
+        <p className="text-xs text-zinc-400">Coming Soon...</p>
       </div>
     </div>
   );

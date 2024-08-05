@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Navbar />
           <div className="z-[10]">{children}</div>
           <Footer />
+          <Toaster richColors closeButton duration={4000} />
         </ThemeProvider>
       </body>
     </html>

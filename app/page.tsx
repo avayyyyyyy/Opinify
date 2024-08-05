@@ -1,6 +1,8 @@
+import HomeForm from "@/components/HomeForm";
 import BlurFade from "@/components/magicui/blur-fade";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
@@ -26,7 +28,7 @@ export default function Home() {
       >
         <p className="text-sm w-[70%] text-center text-gray-300 mb-8">
           Effortlessly embed customizable feedback forms on your website and
-          access detailed, real-time insights through our intuitive dashboard.
+          access detailed, real time insights through our intuitive dashboard.
         </p>
       </BlurFade>
       {/* <Button className="">
@@ -37,9 +39,7 @@ export default function Home() {
         inView
         className="flex items-center justify-center"
       >
-        <Button variant={"secondary"} className="mb-8">
-          Wishlist 🪄
-        </Button>
+        <HomeForm />
       </BlurFade>
       <BlurFade
         delay={time * 4}
