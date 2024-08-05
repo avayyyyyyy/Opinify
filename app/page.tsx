@@ -1,8 +1,6 @@
 import HomeForm from "@/components/HomeForm";
 import BlurFade from "@/components/magicui/blur-fade";
 import { BorderBeam } from "@/components/magicui/border-beam";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 
