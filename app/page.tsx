@@ -10,13 +10,13 @@ export default function Home() {
   let time = 0.25;
 
   return (
-    <main className="flex min-h-screen z-10 flex-col items-center mx-auto p-24">
+    <main className="flex  z-10 flex-col items-center mx-auto p-24">
       <BlurFade
         delay={time * 1}
         inView
         className="flex items-center justify-center"
       >
-        <div className="text-7xl text-center lg:w-[70%] md:w-[85%] text-transparent mb-8 bg-clip-text bg-gradient-to-br from-white to-gray-400">
+        <div className="lg:text-7xl text-3xl text-center md:text-5xl lg:w-[70%] md:w-fit w-[80vw] shrink-0 text-transparent mb-8 bg-clip-text bg-gradient-to-br from-white to-gray-400">
           Your Go-To Platform for Instant Feedbacks{" "}
           <span className="text-black">🚀</span>
         </div>
@@ -26,7 +26,7 @@ export default function Home() {
         inView
         className="flex items-center justify-center"
       >
-        <p className="text-sm w-[70%] text-center text-gray-300 mb-8">
+        <p className="md:text-sm text-xs w-[70%] text-center text-gray-300 mb-8">
           Effortlessly embed feedback forms on your website and access detailed,
           real time insights through our intuitive dashboard.
         </p>
