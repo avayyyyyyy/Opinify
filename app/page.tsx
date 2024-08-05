@@ -27,8 +27,8 @@ export default function Home() {
         className="flex items-center justify-center"
       >
         <p className="text-sm w-[70%] text-center text-gray-300 mb-8">
-          Effortlessly embed customizable feedback forms on your website and
-          access detailed, real time insights through our intuitive dashboard.
+          Effortlessly embed feedback forms on your website and access detailed,
+          real time insights through our intuitive dashboard.
         </p>
       </BlurFade>
       {/* <Button className="">
