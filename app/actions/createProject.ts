@@ -13,35 +13,49 @@ export const submitProject = async ({
   description: string;
 }) => {
   const user = await auth();
+  try {
+    const schema = z.object({
+      name: z.string(),
+      url: z.string().url(),
+      description: z.string().min(10),
+    });
 
-  const schema = z.object({
-    name: z.string(),
-    url: z.string(),
-    description: z.string(),
-  });
+    const data = schema.safeParse({
+      name,
+      url,
+      description,
+    });
 
-  const data = schema.safeParse({
-    name,
-    url,
-    description,
-  });
+    if (!data.success) {
+      throw new Error("Invalid data");
+    }
 
-  if (!data.success) {
-    throw new Error("Invalid data");
+    const userId = await prisma.user.findUnique({
+      where: {
+        email: user?.user?.email!,
+      },
+    });
+    if (!userId) {
+      throw new Error("User not found");
+    }
+
+    const dbSave = await prisma.project.create({
+      data: {
+        name: name,
+        url: url,
+        description: description,
+        userId: userId?.id,
+      },
+    });
+
+    if (!dbSave) {
+      throw new Error("Failed to save data");
+    }
+
+    console.log(dbSave);
+
+    return { success: true };
+  } catch (error) {
+    return { success: false };
   }
-
-  const userId = await prisma.user.findUnique({
-    where: {
-      email: user?.user?.email!,
-    },
-  });
-
-  const dbSave = await prisma.project.create({
-    data: {
-      name: name,
-      url: url,
-      description: description,
-      userId: userId?.id,
-    },
-  });
 };

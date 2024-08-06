@@ -1,38 +1,19 @@
 import CreateProject from "@/components/CreateProject";
 import DashboardCards from "@/components/DashboardCards";
 import { Button } from "@/components/ui/button";
+import { auth } from "@/lib/auth";
+import prisma from "@/lib/db";
 import { SquarePlus } from "lucide-react";
 import React from "react";
 
-const Page = () => {
-  const dummyData = [
-    {
-      title: "shubhcodes.me",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, voluptatem?",
-      rating: 3,
+const Page = async () => {
+  const user = await auth();
+
+  const data = await prisma.project.findMany({
+    where: {
+      userId: user?.user?.id,
     },
-    {
-      title: "example.com",
-      description: "An example description for the example.com website.",
-      rating: 4,
-    },
-    {
-      title: "myportfolio.com",
-      description: "This is a portfolio site showcasing various projects.",
-      rating: 5,
-    },
-    {
-      title: "randomsite.net",
-      description: "Random site with some random content.",
-      rating: 2,
-    },
-    {
-      title: "demoapp.io",
-      description: "A demo application for showcasing features.",
-      rating: 4,
-    },
-  ];
+  });
 
   return (
     <div className="w-full p-4">
@@ -43,14 +24,18 @@ const Page = () => {
       </div>
       <hr />
       <div className="p-3 flex flex-wrap gap-6">
-        {dummyData.map((data, index) => (
-          <DashboardCards
-            key={index}
-            title={data.title}
-            description={data.description}
-            stars={data.rating}
-          />
-        ))}
+        {data && data.length > 0 ? (
+          data.map((data, index) => (
+            <DashboardCards
+              key={index}
+              id={data.id}
+              title={data.url}
+              description={data.description}
+            />
+          ))
+        ) : (
+          <div className="text-center w-full">No projects found</div>
+        )}
       </div>
     </div>
   );
