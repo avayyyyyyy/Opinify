@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./ui/button";
+import AuthButtons from "./AuthButtons";
 
 const Navbar = () => {
   return (
@@ -10,17 +10,13 @@ const Navbar = () => {
       <div className="text-xl font-light text-transparent z-[200] bg-gradient-to-br from-white to-gray-300 bg-clip-text">
         Opinify
       </div>
-      <div className="flex gap-2">
-        {/* <Button variant={"outline"}>Log in</Button>
-        <Button variant={"secondary"}>Sign up</Button> */}
+      <div>
         {/* <Button variant={"secondary"}>Wishlist 🪄</Button> */}
-        <p className="text-xs text-zinc-400">Coming Soon...</p>
+        <AuthButtons />
+        {/* <p className="text-xs text-zinc-400">Coming Soon...</p> */}
       </div>
     </div>
   );
 };
 
 export default Navbar;
-
-// colorFrom = "#bc4e9c",
-//   colorTo = "#f80759",
