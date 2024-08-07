@@ -32,7 +32,7 @@ export default function DeleteProjectButton({ id }: { id: string }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="destructive">Delete Project</Button>
+        <Button variant="destructive">Delete</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

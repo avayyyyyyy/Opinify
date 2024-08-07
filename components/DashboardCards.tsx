@@ -7,22 +7,29 @@ const DashboardCards = ({
   id,
   title,
   description,
+  name,
 }: {
   id: string;
   title: string;
   description: string;
+  name: string;
 }) => {
   return (
     <div className="border md:max-w-72 w-full px-4 flex flex-col transition-all ease-in-out gap-y-2 py-3 rounded-md mx-auto md:mx-0">
-      <div className="text-md hidden md:block">{title}</div>
+      <div className="text-md hidden md:block">{name}</div>
       <hr />
+      <Link
+        href={title}
+        target="_blank"
+        className="text-xs text-blue-500 font-light"
+      >
+        {title}
+      </Link>
       <div className="hidden md:block text-xs text-white/70 font-light">
-        {description.length > 20
-          ? `${description.slice(0, 20)}...`
+        {description.length > 40
+          ? `${description.slice(0, 40)}..`
           : description}
-      </div>
-      <div className="block md:hidden text-xs text-white/70 font-light">
-        {description}
+        .
       </div>
       {/* <div className="flex items-center gap-2">
         {[...Array(5)].map((_, index) => (

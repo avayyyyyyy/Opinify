@@ -164,8 +164,17 @@ export function FeedbackTable({
             {filteredFeedback.map((item) => (
               <TableRow key={item.id}>
                 <TableCell>{item.name}</TableCell>
-                <TableCell>{item.email}</TableCell>
-                <TableCell>{item.feedback.slice(0, 15)}...</TableCell>
+                <TableCell>
+                  {item.email.length > 10
+                    ? `${item.email.slice(0, 10)}...`
+                    : item.email}
+                </TableCell>
+                <TableCell>
+                  {" "}
+                  {item.feedback.length > 10
+                    ? `${item.feedback.slice(0, 10)}...`
+                    : item.feedback}
+                </TableCell>
                 <TableCell>
                   <div className="flex items-center gap-0.5">
                     {Array.from({ length: item.rating }).map((_, index) => (

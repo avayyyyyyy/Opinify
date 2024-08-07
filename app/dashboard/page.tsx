@@ -18,6 +18,8 @@ const Page = async () => {
     },
   });
 
+  console.log(data);
+
   return (
     <div className="w-full p-4 min-h-[80vh]">
       <div className="flex justify-between items-center py-3 px-5">
@@ -34,6 +36,7 @@ const Page = async () => {
             <DashboardCards
               key={index}
               id={data.id}
+              name={data.name}
               title={data.url}
               description={data.description}
             />
