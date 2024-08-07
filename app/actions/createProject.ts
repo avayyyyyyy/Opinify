@@ -13,6 +13,18 @@ export const submitProject = async ({
   description: string;
 }) => {
   const user = await auth();
+
+  const projects = await prisma.project.findMany({
+    where: {
+      userId: user?.user?.id,
+    },
+  });
+
+  if (projects.length >= 5) {
+    console.log("Maximum project limit reached");
+    return { success: false };
+  }
+
   try {
     const schema = z.object({
       name: z.string(),
@@ -27,6 +39,7 @@ export const submitProject = async ({
     });
 
     if (!data.success) {
+      console.log("Invalid data");
       throw new Error("Invalid data");
     }
 
@@ -36,6 +49,7 @@ export const submitProject = async ({
       },
     });
     if (!userId) {
+      console.log("User not found");
       throw new Error("User not found");
     }
 
@@ -49,13 +63,15 @@ export const submitProject = async ({
     });
 
     if (!dbSave) {
+      console.log("Failed to save data");
       throw new Error("Failed to save data");
     }
 
-    console.log(dbSave);
+    console.log("Project saved:", dbSave);
 
     return { success: true };
   } catch (error) {
+    console.log("Error:", error);
     return { success: false };
   }
 };

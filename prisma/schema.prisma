@@ -13,13 +13,13 @@ model Account {
   type              String
   provider          String
   providerAccountId String  @map("provider_account_id")
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
-  expires_at        Int?
-  token_type        String?
+  refreshToken      String? @db.Text
+  accessToken       String? @db.Text
+  expiresAt         Int?
+  tokenType         String?
   scope             String?
-  id_token          String? @db.Text
-  session_state     String?
+  idToken           String? @db.Text
+  sessionState      String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -45,18 +45,35 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  Project       Project[]
+  projects      Project[]
 
   @@map("users")
 }
 
 model Project {
-  id          String @id @default(cuid())
+  id          String     @id @default(cuid())
   name        String
-  url         String
+  url         String     @unique
   description String
-  user        User   @relation(fields: [userId], references: [id])
   userId      String
+  user        User       @relation(fields: [userId], references: [id])
+  feedbacks   Feedback[]
+  createdAt   DateTime   @default(now())
+
+  @@map("projects")
+}
+
+model Feedback {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  feedback  String
+  rating    Int      @default(3)
+  createdAt DateTime @default(now())
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id])
+
+  @@map("feedbacks")
 }
 
 model VerificationToken {

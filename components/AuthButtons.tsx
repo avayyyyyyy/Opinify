@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Loader } from "lucide-react";
+import CreateProject from "./CreateProject";
 
 const AuthButtons = () => {
   const { data, status } = useSession();
@@ -25,7 +26,10 @@ const AuthButtons = () => {
   return (
     <>
       {data?.user?.email ? (
-        <div>
+        <div className="flex gap-3 items-center">
+          <div className="block md:hidden">
+            <CreateProject />
+          </div>
           <Button onClick={() => signOut()} variant="outline">
             Sign out
           </Button>

@@ -1,13 +1,16 @@
 import CreateProject from "@/components/CreateProject";
 import DashboardCards from "@/components/DashboardCards";
-import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/db";
-import { SquarePlus } from "lucide-react";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const Page = async () => {
   const user = await auth();
+
+  if (!user) {
+    return redirect("/");
+  }
 
   const data = await prisma.project.findMany({
     where: {
@@ -16,11 +19,13 @@ const Page = async () => {
   });
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 min-h-[80vh]">
       <div className="flex justify-between items-center py-3 px-5">
         {" "}
         <h1 className="md:text-3xl text-xl font-semibold">Dashboard Page 📄</h1>
-        <CreateProject />
+        <div className="hidden md:block">
+          <CreateProject />
+        </div>
       </div>
       <hr />
       <div className="p-3 flex flex-wrap gap-6">
@@ -34,7 +39,10 @@ const Page = async () => {
             />
           ))
         ) : (
-          <div className="text-center w-full">No projects found</div>
+          <div className="flex flex-col justify-center mx-auto gap-y-3">
+            <div className="text-center mt-3 w-full">No projects found 🥲</div>
+            <CreateProject />
+          </div>
         )}
       </div>
     </div>
