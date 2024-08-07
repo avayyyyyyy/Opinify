@@ -1,9 +1,5 @@
 "use client";
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/9M5gohkNm66
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 import {
   Dialog,
   DialogTrigger,
@@ -12,13 +8,11 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-  DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { deleteProject } from "@/app/actions/deleteProject";
-import { toast } from "sonner";
 import { useState } from "react";
 import { Loader } from "lucide-react";
+import { deleteProject } from "@/app/actions/deleteProject";
 
 export default function DeleteProjectButton({ id }: { id: string }) {
   const [loading, setLoading] = useState(false);
@@ -26,6 +20,7 @@ export default function DeleteProjectButton({ id }: { id: string }) {
   const handleDelete = async () => {
     setLoading(true);
     const data = await deleteProject(id);
+    console.log("Delete Data: ", data);
     if (data.success) {
       setLoading(false);
       window.location.reload();
@@ -49,7 +44,7 @@ export default function DeleteProjectButton({ id }: { id: string }) {
         </DialogHeader>
         <DialogFooter>
           {loading ? (
-            <Button disabled variant={"destructive"}>
+            <Button disabled variant="destructive">
               <Loader className="animate-spin" size={16} />
             </Button>
           ) : (
