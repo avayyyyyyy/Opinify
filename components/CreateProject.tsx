@@ -15,12 +15,15 @@ import { Input } from "./ui/input";
 import { Loader, SquarePlus } from "lucide-react";
 import { submitProject } from "@/app/actions/createProject";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const CreateProject = () => {
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     setLoading(true);
@@ -32,9 +35,9 @@ const CreateProject = () => {
     };
     const data = await submitProject(formData);
     if (data.success) {
-      toast.success("Project created successfully 🎉");
-      window.location.reload();
+      setName("");
       setLoading(false);
+      router.push(`dashboard/feedbacks/${data.projectId}`);
     } else {
       toast.error("Failed to create project 😢");
       setLoading(false);

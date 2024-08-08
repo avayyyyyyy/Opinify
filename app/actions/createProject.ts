@@ -69,7 +69,7 @@ export const submitProject = async ({
 
     console.log("Project saved:", dbSave);
 
-    return { success: true };
+    return { success: true, projectId: dbSave.id };
   } catch (error) {
     console.log("Error:", error);
     return { success: false };
