@@ -15,7 +15,7 @@ const Sidebar = async () => {
           <nav className="-mx-3 space-y-6 ">
             <div className="space-y-3 ">
               <label className="px-3 flex gap-1 items-center text-xs text-black uppercase dark:text-white/50">
-                Features <FileSignature size={10} />
+                Features <FileSignature size={12} />
               </label>
               <hr />
 
