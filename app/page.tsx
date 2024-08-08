@@ -19,7 +19,7 @@ export default async function Home() {
   console.log("data in server side:", data);
 
   return (
-    <main className="flex  z-10 flex-col items-center mx-auto p-24">
+    <main className="flex z-10 flex-col items-center mx-auto md:p-24 px-24 py-10">
       <Particles
         className="absolute inset-0"
         quantity={100}
