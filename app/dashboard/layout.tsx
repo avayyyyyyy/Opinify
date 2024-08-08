@@ -1,11 +1,9 @@
 import Sidebar from "@/components/Sidebar";
-import { auth } from "@/lib/auth";
-import { redirect } from "next/navigation";
 import React from "react";
 
 const layout = async ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="md:flex block">
+    <div className="md:flex block min-h-[80vh]">
       <Sidebar />
       {children}
     </div>

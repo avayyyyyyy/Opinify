@@ -36,7 +36,7 @@ const Page = async ({ params }: Params) => {
     console.log("id: ", params.id);
 
     return (
-      <div className="w-screen h-screen overflow-y-scroll">
+      <div className="w-screen h-full overflow-y-scroll">
         <div>
           {feedbacks.length > 0 ? (
             <FeedbackTable

@@ -1,4 +1,4 @@
-import { ChartArea, CircleHelp } from "lucide-react";
+import { ChartArea, CircleHelp, FileSignature } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Card, CardContent } from "./ui/card";
@@ -10,12 +10,12 @@ const Sidebar = async () => {
 
   return (
     <div>
-      <aside className="md:flex hidden flex-col  w-64 h-screen px-5 pt-3 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-black dark:border-balck">
+      <aside className="md:flex hidden flex-col  w-64 h-full px-5 pt-3 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-black dark:border-balck">
         <div className="flex flex-col pb-8 justify-between flex-1">
           <nav className="-mx-3 space-y-6 ">
             <div className="space-y-3 ">
-              <label className="px-3 text-xs text-black uppercase dark:text-white/50">
-                Features
+              <label className="px-3 flex gap-1 items-center text-xs text-black uppercase dark:text-white/50">
+                Features <FileSignature size={10} />
               </label>
               <hr />
 
