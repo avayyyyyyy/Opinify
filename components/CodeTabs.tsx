@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CopyToClipboard from "@/components/CopyToClipboard";
+import { Separator } from "./ui/separator";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { funky } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const EmbedCodeTabs = ({ id }: { id: string }) => {
   const [selectedTab, setSelectedTab] = useState("html");
@@ -18,10 +21,12 @@ const EmbedCodeTabs = ({ id }: { id: string }) => {
   <script src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
 </body>
 
-// </> This code is React Compatible also </> 
+// </> This code is also compatible in React! </> 
   `;
 
   const nextjsCodeString = `
+// Type Declation For TSX
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -35,20 +40,14 @@ declare global {
   }
 }
 
-<widget-web-component projectid="${id}"></widget-web-component>
+// Next.js Body Content
 
-<script
-  src="https://unpkg.com/react@18/umd/react.development.js"
-  async
-></script>
-<script
-  async
-  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-></script>
-<script
-  async
-  src="https://opinify-widget-w24d.vercel.app/widget.umd.js"
-></script>
+  <widget-web-component projectid="${id}"></widget-web-component>
+
+  <script async src="https://unpkg.com/react@18/umd/react.development.js" ></script>
+  <script async src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script async src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
+
   `;
 
   const getCodeString = () => {
@@ -57,10 +56,11 @@ declare global {
 
   return (
     <>
+      <Separator className="my-3" />
       <div className="mx-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Embed Code</h1>
-          <p className="text-sm text-white/70">
+          <h1 className="md:text-3xl text-xl font-bold">Embed Code</h1>
+          <p className="md:text-sm text-xs text-white/70">
             Embed this code in your website to get user feedbacks! 😙
           </p>
         </div>
@@ -68,21 +68,41 @@ declare global {
           <CopyToClipboard codeString={getCodeString()} />
         </div>
       </div>
-      <div className="w-full p-5 border rounded-md m-4 text-sm overflow-scroll">
+      <div className="w-[96%] p-5 border rounded-md m-auto my-3 text-sm overflow-scroll">
         <Tabs defaultValue="html" onValueChange={setSelectedTab}>
           <TabsList>
             <TabsTrigger value="html">HTML</TabsTrigger>
             <TabsTrigger value="nextjs">Next.js</TabsTrigger>
           </TabsList>
           <TabsContent value="html">
-            <pre>
-              <code>{htmlCodeString}</code>
-            </pre>
+            <SyntaxHighlighter
+              language="javascript"
+              style={funky}
+              customStyle={{
+                lineHeight: "1.5",
+                fontSize: "1rem",
+                borderRadius: "5px",
+                backgroundColor: "#000",
+                padding: "20px",
+              }}
+            >
+              {htmlCodeString}
+            </SyntaxHighlighter>
           </TabsContent>
           <TabsContent value="nextjs">
-            <pre>
-              <code>{nextjsCodeString}</code>
-            </pre>
+            <SyntaxHighlighter
+              language="jsx"
+              style={funky}
+              customStyle={{
+                lineHeight: "1.5",
+                fontSize: "1rem",
+                borderRadius: "5px",
+                backgroundColor: "#000",
+                padding: "20px",
+              }}
+            >
+              {nextjsCodeString}
+            </SyntaxHighlighter>
           </TabsContent>
         </Tabs>
       </div>

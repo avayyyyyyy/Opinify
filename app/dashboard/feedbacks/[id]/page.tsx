@@ -4,6 +4,7 @@ import prisma from "@/lib/db";
 import { redirect } from "next/navigation";
 import React from "react";
 import EmbedCodeTabs from "@/components/CodeTabs"; // Adjust the path as needed
+import { Separator } from "@radix-ui/react-separator";
 
 interface Params {
   params: { id: string };
@@ -46,7 +47,7 @@ const Page = async ({ params }: Params) => {
               }}
             />
           ) : (
-            <h1 className="text-center my-6">No feedbacks found</h1>
+            <h1 className="text-center my-6">No feedbacks found 🥲...</h1>
           )}
         </div>
         <EmbedCodeTabs id={params.id} />

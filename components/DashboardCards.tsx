@@ -16,7 +16,7 @@ const DashboardCards = ({
 }) => {
   return (
     <div className="border md:max-w-72 w-full px-4 flex flex-col transition-all ease-in-out gap-y-2 py-3 rounded-md mx-auto md:mx-0">
-      <div className="text-md hidden md:block">{name}</div>
+      <div className="text-md block">{name}</div>
       <hr />
       <Link
         href={title}
@@ -25,7 +25,7 @@ const DashboardCards = ({
       >
         {title}
       </Link>
-      <div className="hidden md:block text-xs text-white/70 font-light">
+      <div className="block text-xs text-white/70 font-light">
         {description.length > 40
           ? `${description.slice(0, 40)}..`
           : description}

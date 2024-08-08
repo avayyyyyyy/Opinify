@@ -26,6 +26,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { FeedbackView } from "./feedback-view";
+import { Separator } from "./ui/separator";
 
 type FeedbackItem = {
   id: string;
