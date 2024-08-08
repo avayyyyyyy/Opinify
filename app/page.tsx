@@ -32,7 +32,7 @@ export default async function Home() {
         inView
         className="flex items-center justify-center"
       >
-        <div className="lg:text-7xl text-3xl text-center md:text-5xl lg:w-[70%] md:w-fit w-[80vw] shrink-0 text-transparent mb-8 bg-clip-text bg-gradient-to-br from-white to-gray-400">
+        <div className="lg:text-6xl text-2xl text-center md:text-5xl lg:w-[70%] md:w-fit w-[80vw] shrink-0 text-transparent mb-8 bg-clip-text bg-gradient-to-br from-white to-gray-400">
           Your Go-To Platform for Instant Feedbacks{" "}
           <span className="text-black">🚀</span>
         </div>
