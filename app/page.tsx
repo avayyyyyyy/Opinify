@@ -62,15 +62,15 @@ export default async function Home() {
         inView
         className="flex items-center justify-center"
       >
-        <div className="relative mb-10 flex max-w-6xl justify-center overflow-hidden shadow-white/5 shadow-2xl">
+        <div className="relative mb-10 flex max-w-6xl justify-center overflow-hidden">
           <Image
-            src="https://utfs.io/f/fc83d3be-b350-4562-b326-0819da14bc06-p0nwjn.png"
+            src="https://utfs.io/f/ef29d78a-9311-43a2-a012-89d80136aeb7-6ie4x0.jpg"
             alt="hero-section"
             width={1400}
             height={1400}
-            className="h-full w-full rounded-lg object-cover md:w-[1300px]  border "
+            className="h-full w-full rounded-lg object-cover md:w-[1600px]"
             style={{
-              maskImage: `linear-gradient(to top, transparent, black 100%)`,
+              maskImage: `linear-gradient(to top, transparent, black 20%)`,
             }}
           />
           <BorderBeam
