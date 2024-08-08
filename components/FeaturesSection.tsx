@@ -68,7 +68,7 @@ const FeaturesGrid = () => {
         {FeaturesData.map((feature) => {
           return (
             <div key={feature.id} className="width-fit text-left">
-              <div className="mb-2 w-fit rounded-lg bg-slate-500 p-1 text-center text-white ">
+              <div className="mb-2 w-fit rounded-lg bg-slate-700 p-1 text-center text-white ">
                 {feature.icon}
               </div>
               <div className="text-md mb-1 font-semibold text-gray-900 dark:text-gray-100">
