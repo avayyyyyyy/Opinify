@@ -5,7 +5,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <div
-      className="flex w-screen h-full bg-zinc-900 mx-auto bg-clip-padding backdrop-filter z-[100000] backdrop-blur-sm bg-opacity-30 items-center md:px-16 px-4 justify-between py-6 border-b-2 border-zinc-900 sticky top-0
+      className="flex w-screen h-full bg-zinc-900 mx-auto bg-clip-padding backdrop-filter z-[100000] backdrop-blur-sm bg-opacity-30 items-center md:px-16 px-6 justify-between py-6 border-b-2 border-zinc-900 sticky top-0
 "
     >
       <Link
