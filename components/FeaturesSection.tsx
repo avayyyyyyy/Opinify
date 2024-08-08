@@ -1,4 +1,11 @@
-import { Sparkles, Code, Palette, Clock, Command, Feather } from "lucide-react";
+import {
+  Palette,
+  CloudLightning,
+  BarChart,
+  Users,
+  Bot,
+  MonitorSmartphone,
+} from "lucide-react";
 
 interface Feature {
   id: number;
@@ -12,45 +19,45 @@ const iconSize = 18;
 const FeaturesData: Feature[] = [
   {
     id: 1,
-    name: "Easy to Use",
+    name: "Real-time Feedback",
     description:
-      "SyntaxUI components are designed to be intuitive and easy to use, even for beginners.",
-    icon: <Sparkles size={iconSize} />,
+      "Collect and view feedback in real-time, allowing for immediate insights and actions.",
+    icon: <CloudLightning size={iconSize} />,
   },
   {
     id: 2,
-    name: "Customizable",
+    name: "Customizable Surveys",
     description:
-      "Customize the look and feel of SyntaxUI components to match your brand and design.",
+      "Create surveys that match your brand's look and feel, with customizable questions and formats.",
     icon: <Palette size={iconSize} />,
   },
   {
     id: 3,
-    name: "Developer-Friendly",
+    name: "Detailed Analytics",
     description:
-      "SyntaxUI is built with developers in mind, providing a clean and consistent API.",
-    icon: <Code size={iconSize} />,
+      "Get detailed reports and analytics to understand user feedback and make data-driven decisions.",
+    icon: <BarChart size={iconSize} />,
   },
   {
     id: 4,
-    name: "Responsive",
+    name: "Multi-channel Support",
     description:
-      "SyntaxUI components are designed to be responsive and work seamlessly across devices.",
-    icon: <Feather size={iconSize} />,
+      "Gather feedback from multiple channels including web, email, and mobile apps.",
+    icon: <MonitorSmartphone size={iconSize} />,
   },
   {
     id: 5,
-    name: "Accessible",
+    name: "User Segmentation",
     description:
-      "SyntaxUI prioritizes accessibility, ensuring that your components are usable by everyone.",
-    icon: <Command size={iconSize} />,
+      "Segment users based on feedback, behavior, and other criteria to tailor your responses.",
+    icon: <Users size={iconSize} />,
   },
   {
     id: 6,
-    name: "Regularly Updated",
+    name: "Automated Responses",
     description:
-      "SyntaxUI is actively maintained and regularly updated with new features and improvements.",
-    icon: <Clock size={iconSize} />,
+      "Set up automated responses to user feedback to ensure timely engagement and follow-up.",
+    icon: <Bot size={iconSize} />,
   },
 ];
 
