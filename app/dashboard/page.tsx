@@ -8,6 +8,8 @@ import React from "react";
 const Page = async () => {
   const user = await auth();
 
+  console.log(user);
+
   if (!user) {
     return redirect("/");
   }
