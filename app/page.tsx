@@ -3,9 +3,7 @@ import GetStartedButton from "@/components/GetStartedButton";
 import BlurFade from "@/components/magicui/blur-fade";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Particles from "@/components/magicui/particles";
-import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
-import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
@@ -44,7 +42,7 @@ export default async function Home() {
         inView
         className="flex items-center justify-center"
       >
-        <p className="md:text-sm text-xs w-[70%] text-center text-gray-300 mb-8">
+        <p className="md:text-sm text-xs w-[70vw] text-center text-gray-300 mb-8">
           Effortlessly embed feedback forms on your website and access detailed,
           real time insights through our intuitive dashboard.
         </p>
@@ -60,15 +58,15 @@ export default async function Home() {
       <BlurFade
         delay={time * 4}
         inView
-        className="flex items-center justify-center"
+        className=" items-center justify-center hidden md:flex"
       >
-        <div className="relative mb-10 flex max-w-6xl justify-center overflow-hidden">
+        <div className="relative mb-10 flex md:max-w-6xl justify-center overflow-hidden">
           <Image
             src="https://utfs.io/f/ef29d78a-9311-43a2-a012-89d80136aeb7-6ie4x0.jpg"
             alt="hero-section"
             width={1400}
             height={1400}
-            className="h-full w-full rounded-lg object-cover md:w-[1600px]"
+            className="h-full rounded-lg object-cover w-[1600px]"
             style={{
               maskImage: `linear-gradient(to top, transparent, black 20%)`,
             }}
@@ -81,6 +79,26 @@ export default async function Home() {
           />
         </div>
       </BlurFade>
+
+      <BlurFade
+        delay={time * 4}
+        inView
+        className="flex md:hidden items-center justify-center w-[90vw]"
+      >
+        {/* <div className="relative mb-10 flex md:max-w-6xl justify-center overflow-hidden"> */}
+        <Image
+          src="https://utfs.io/f/ef29d78a-9311-43a2-a012-89d80136aeb7-6ie4x0.jpg"
+          alt="hero-section"
+          width={1400}
+          height={1400}
+          className="h-full rounded-lg object-cover"
+          style={{
+            maskImage: `linear-gradient(to top, transparent, black 20%)`,
+          }}
+        />
+        {/* </div> */}
+      </BlurFade>
+
       <BlurFade
         delay={time * 1}
         inView

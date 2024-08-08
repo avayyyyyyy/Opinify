@@ -14,49 +14,49 @@ interface Feature {
   icon: JSX.Element;
 }
 
-const iconSize = 18;
+const iconSize = 16;
 
 const FeaturesData: Feature[] = [
   {
     id: 1,
-    name: "Real-time Feedback",
+    name: "Instant Feedback Collection",
     description:
-      "Collect and view feedback in real-time, allowing for immediate insights and actions.",
+      "Seamlessly gather user feedback in real-time to capture their opinions and suggestions immediately.",
     icon: <CloudLightning size={iconSize} />,
   },
   {
     id: 2,
-    name: "Customizable Surveys",
+    name: "Custom Feedback Widgets",
     description:
-      "Create surveys that match your brand's look and feel, with customizable questions and formats.",
+      "Design feedback widgets that blend perfectly with your website’s aesthetics and user experience.",
     icon: <Palette size={iconSize} />,
   },
   {
     id: 3,
-    name: "Detailed Analytics",
+    name: "Comprehensive Feedback Analytics",
     description:
-      "Get detailed reports and analytics to understand user feedback and make data-driven decisions.",
+      "Analyze feedback trends and patterns with detailed reports to make informed decisions.",
     icon: <BarChart size={iconSize} />,
   },
   {
     id: 4,
-    name: "Multi-channel Support",
+    name: "Multi-platform Integration",
     description:
-      "Gather feedback from multiple channels including web, email, and mobile apps.",
+      "Integrate feedback collection across various platforms, including web, email, and mobile apps.",
     icon: <MonitorSmartphone size={iconSize} />,
   },
   {
     id: 5,
-    name: "User Segmentation",
+    name: "Feedback Categorization",
     description:
-      "Segment users based on feedback, behavior, and other criteria to tailor your responses.",
+      "Organize feedback into categories for better management and actionable insights.",
     icon: <Users size={iconSize} />,
   },
   {
     id: 6,
-    name: "Automated Responses",
+    name: "Automated Feedback Follow-ups",
     description:
-      "Set up automated responses to user feedback to ensure timely engagement and follow-up.",
+      "Set up automated responses to acknowledge and follow up on user feedback promptly.",
     icon: <Bot size={iconSize} />,
   },
 ];
@@ -64,15 +64,18 @@ const FeaturesData: Feature[] = [
 const FeaturesGrid = () => {
   return (
     <div>
-      <div className="mt-8 grid w-full grid-cols-2 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 md:grid flex flex-col w-full grid-cols-2 gap-12 md:grid-cols-2 lg:grid-cols-3 pt-10">
         {FeaturesData.map((feature) => {
           return (
             <div key={feature.id} className="width-fit text-left">
-              <div className="mb-2 w-fit rounded-lg bg-slate-700 p-1 text-center text-white ">
-                {feature.icon}
-              </div>
-              <div className="text-md mb-1 font-semibold text-gray-900 dark:text-gray-100">
-                {feature.name}
+              <div className="flex items-center gap-2">
+                {" "}
+                <div className="mb-2 w-fit rounded-lg bg-slate-700 p-1 text-center text-white ">
+                  {feature.icon}
+                </div>
+                <div className="text-md mb-1 font-semibold text-gray-900 dark:text-gray-100">
+                  {feature.name}
+                </div>
               </div>
               <div className="font-regular max-w-sm text-xs text-gray-600  dark:text-gray-400">
                 {feature.description}
@@ -87,13 +90,13 @@ const FeaturesGrid = () => {
 
 const FeatureSections = () => {
   return (
-    <div className="my-12 flex w-full flex-col items-center justify-center">
-      <h1 className="mb-2 max-w-3xl text-center text-2xl font-semibold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
+    <div className="my-12 min-w-[90vw] flex w-full flex-col items-center justify-center">
+      <h1 className="mb-2 text-center text-2xl font-semibold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
         Opinify is not like any other feedback app.
       </h1>
-      <p className="max-w-sm text-center text-sm text-gray-600 dark:text-gray-400">
-        Opinify is a free to use, and highly customizable feedback integration
-        website.
+      <p className="max-w-md text-center text-sm text-gray-600 dark:text-gray-400">
+        Opinify is a free to use, and highly simplified feedback form
+        integration website.
       </p>
       <FeaturesGrid />
     </div>
