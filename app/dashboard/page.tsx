@@ -12,9 +12,15 @@ const Page = async () => {
     return redirect("/");
   }
 
+  const currentUser = await prisma.user.findUnique({
+    where: {
+      email: user?.user?.email!,
+    },
+  });
+
   const data = await prisma.project.findMany({
     where: {
-      userId: user?.user?.id,
+      userId: currentUser?.id,
     },
   });
 
