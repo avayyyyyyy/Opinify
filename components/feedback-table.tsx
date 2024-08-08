@@ -93,7 +93,7 @@ export function FeedbackTable({
         <div className="flex items-center justify-between mb-4">
           <Input
             placeholder="Search feedback..."
-            className="bg-white dark:bg-gray-950"
+            className="bg-white dark:bg-black"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
