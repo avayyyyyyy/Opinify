@@ -64,7 +64,7 @@ const FeaturesData: Feature[] = [
 const FeaturesGrid = () => {
   return (
     <div>
-      <div className="mt-8 md:grid flex flex-col w-full grid-cols-2 gap-12 md:grid-cols-2 lg:grid-cols-3 pt-10">
+      <div className="mt-2 px-3 md:grid flex flex-col w-full grid-cols-2 gap-12 md:grid-cols-2 lg:grid-cols-3 pt-10">
         {FeaturesData.map((feature) => {
           return (
             <div key={feature.id} className="width-fit text-left">

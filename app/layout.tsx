@@ -10,8 +10,54 @@ import { SessionProvider } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Opinify",
-  description: "Created by Shubhankit Jain",
+  title: "Opinify - Real-Time User Feedback Platform",
+  description:
+    "Opinify is a cutting-edge platform designed to collect, manage, and analyze real-time user feedback. Created by Shubhankit Jain, Opinify enables businesses to gain immediate insights through customizable feedback widgets, multi-platform integration, and comprehensive analytics.",
+  keywords: [
+    "Opinify",
+    "user feedback",
+    "real-time",
+    "data-driven",
+    "analytics",
+    "customer engagement",
+  ],
+  authors: [{ name: "Shubhankit Jain", url: "https://www.opinify.in/" }],
+  creator: "Shubhankit Jain",
+  publisher: "Opinify",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Opinify - Real-Time User Feedback Platform",
+    description:
+      "Opinify is a cutting-edge platform designed to collect, manage, and analyze real-time user feedback. Created by Shubhankit Jain, Opinify enables businesses to gain immediate insights through customizable feedback widgets, multi-platform integration, and comprehensive analytics.",
+    url: "https://www.opinify.in",
+    siteName: "Opinify",
+    images: [
+      {
+        url: "/Logo.png",
+        width: 800,
+        height: 600,
+        alt: "Opinify Logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    // card: "summary_large_image",
+    title: "Opinify - Real-Time User Feedback Platform",
+    description:
+      "Opinify is a cutting-edge platform designed to collect, manage, and analyze real-time user feedback. Created by Shubhankit Jain, Opinify enables businesses to gain immediate insights through customizable feedback widgets, multi-platform integration, and comprehensive analytics.",
+    // images: ["https://www.opinify.com/twitter-card.png"],
+  },
 };
 
 export default async function RootLayout({
