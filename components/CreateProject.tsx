@@ -35,11 +35,11 @@ const CreateProject = () => {
     };
     const data = await submitProject(formData);
     if (data.success) {
+      router.push(`dashboard/feedbacks/${data.projectId}`);
       setName("");
       setUrl("");
       setDescription("");
       setLoading(false);
-      router.push(`dashboard/feedbacks/${data.projectId}`);
     } else {
       toast.error("Failed to create project 😢");
       setLoading(false);
