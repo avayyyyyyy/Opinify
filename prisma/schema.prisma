@@ -76,7 +76,7 @@ model Project {
   url         String     @unique
   description String
   userId      String
-  user        User       @relation(fields: [userId], references: [id])
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   feedbacks   Feedback[]
   createdAt   DateTime   @default(now())
 
@@ -91,7 +91,7 @@ model Feedback {
   rating    Int      @default(3)
   createdAt DateTime @default(now())
   projectId String
-  project   Project  @relation(fields: [projectId], references: [id])
+  Project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
 
   @@map("feedbacks")
 }
