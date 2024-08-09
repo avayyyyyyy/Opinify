@@ -7,14 +7,13 @@ export const deleteProject = async (id: string) => {
   try {
     const user = await auth();
 
-    console.log("user: ", user);
-
     if (!user?.user?.email) {
       console.log("User not authenticated");
       return { success: false, error: "User not authenticated" };
     }
 
-    const userId = await prisma.user.findUnique({
+    // Fetch the user ID based on email
+    const userRecord = await prisma.user.findUnique({
       where: {
         email: user.user.email,
       },
@@ -23,24 +22,28 @@ export const deleteProject = async (id: string) => {
       },
     });
 
+    if (!userRecord?.id) {
+      console.log("User ID not found");
+      return { success: false, error: "User ID not found" };
+    }
+
+    // Check if the project exists for the user
     const project = await prisma.project.findUnique({
       where: {
         id: id,
-        userId: userId?.id,
+        userId: userRecord.id,
       },
     });
-
-    console.log("project: ", project);
 
     if (!project) {
       console.log("Project not found");
       return { success: false, error: "Project not found" };
     }
 
+    // Delete the project
     const deletedProject = await prisma.project.delete({
       where: {
         id: id,
-        userId: userId?.id,
       },
     });
 
