@@ -73,7 +73,7 @@ const FeaturesGrid = () => {
                 <div className="mb-2 w-fit rounded-lg bg-slate-700 p-1 text-center text-white ">
                   {feature.icon}
                 </div>
-                <div className="text-md mb-1 font-semibold text-gray-900 dark:text-gray-100">
+                <div className="text-md mb-1 font-normal text-gray-900 dark:text-gray-100">
                   {feature.name}
                 </div>
               </div>
@@ -91,7 +91,7 @@ const FeaturesGrid = () => {
 const FeatureSections = () => {
   return (
     <div className="my-12 min-w-[90vw] flex w-full flex-col items-center justify-center">
-      <h1 className="mb-2 text-center text-2xl font-semibold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
+      <h1 className="mb-2 text-center text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
         Opinify is not like any other feedback app.
       </h1>
       <p className="max-w-md text-center text-sm text-gray-600 dark:text-gray-400">
