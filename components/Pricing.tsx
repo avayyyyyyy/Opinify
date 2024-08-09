@@ -40,9 +40,9 @@ const Pricing = () => {
   return (
     <section className="relative w-full overflow-hidden flex flex-col justify-center py-12 text-black lg:px-2 lg:py-12">
       <div className="relative z-10 flex flex-col items-center justify-center gap-4">
-        <p className="text-red-100 w-fit  bg-red-600 px-2 py-1 text-xs mt-10 mx-auto rounded-full">
+        {/* <p className="text-red-100 w-fit  bg-red-600 px-2 py-1 text-xs mt-10 mx-auto rounded-full">
           Feature not implemented yet... 🥲
-        </p>
+        </p> */}
         <div className="flex w-full flex-col items-start justify-center space-y-4 md:items-center">
           <div className="mb-2 inline-block rounded-full bg-zinc-100 px-2 py-[0.20rem] text-xs font-medium uppercase text-zinc-500 dark:bg-zinc-200">
             Pricing
