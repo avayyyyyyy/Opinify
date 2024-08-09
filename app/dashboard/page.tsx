@@ -1,5 +1,6 @@
 import CreateProject from "@/components/CreateProject";
 import DashboardCards from "@/components/DashboardCards";
+import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/db";
 import { redirect } from "next/navigation";
@@ -33,9 +34,15 @@ const Page = async () => {
       <div className="flex justify-between items-center py-3 px-5">
         {" "}
         <h1 className="md:text-3xl text-xl font-semibold">Dashboard Page 📄</h1>
-        <div className="hidden md:block">
-          <CreateProject />
-        </div>
+        {data.length > 5 ? (
+          <Button disabled variant={"outline"}>
+            Limit Exceeded
+          </Button>
+        ) : (
+          <div className="hidden md:block">
+            <CreateProject />
+          </div>
+        )}
       </div>
       <hr />
       <div className="p-3 flex flex-wrap gap-6">
