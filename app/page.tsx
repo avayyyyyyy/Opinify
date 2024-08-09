@@ -16,7 +16,7 @@ export default async function Home() {
     redirect("/dashboard");
   }
 
-  console.log("data in server side:", data);
+  // console.log("data in server side:", data);
 
   return (
     <main className="flex z-10 flex-col items-center mx-auto md:p-24 px-24 py-10">

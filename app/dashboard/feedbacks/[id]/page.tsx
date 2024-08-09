@@ -4,7 +4,6 @@ import prisma from "@/lib/db";
 import { redirect } from "next/navigation";
 import React from "react";
 import EmbedCodeTabs from "@/components/CodeTabs"; // Adjust the path as needed
-import { Separator } from "@radix-ui/react-separator";
 
 interface Params {
   params: { id: string };

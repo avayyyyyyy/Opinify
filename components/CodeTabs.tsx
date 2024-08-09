@@ -21,7 +21,7 @@ const EmbedCodeTabs = ({ id }: { id: string }) => {
   <script src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
 </body>
 
-// </> This code is also compatible in React! </> 
+<!-- </> This code is also compatible in React! </> -->
   `;
 
   const nextjsCodeString = `

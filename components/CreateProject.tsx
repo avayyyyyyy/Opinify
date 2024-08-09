@@ -36,6 +36,8 @@ const CreateProject = () => {
     const data = await submitProject(formData);
     if (data.success) {
       setName("");
+      setUrl("");
+      setDescription("");
       setLoading(false);
       router.push(`dashboard/feedbacks/${data.projectId}`);
     } else {
@@ -57,7 +59,7 @@ const CreateProject = () => {
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
           <div className="grid gap-2">
-            <Label htmlFor="name">Project Name</Label>
+            <Label htmlFor="name">Project Name: </Label>
             <Input
               id="name"
               placeholder="Enter project name"
@@ -66,16 +68,22 @@ const CreateProject = () => {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="url">Project URL</Label>
+            <Label htmlFor="url">Project URL:</Label>
+            <span className="text-[10px] text-red-600">
+              URL should be unique...
+            </span>
             <Input
               id="url"
-              placeholder="Enter project URL"
+              placeholder="Enter project URL: https://shubhcodes.me/"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="description">Project Description</Label>
+            <Label htmlFor="description">Project Description:</Label>
+            <span className="text-[10px] text-red-600">
+              5 minimum characters required...
+            </span>
             <Textarea
               id="description"
               placeholder="Enter project description"

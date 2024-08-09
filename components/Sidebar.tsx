@@ -1,4 +1,9 @@
-import { ChartArea, CircleHelp, FileSignature } from "lucide-react";
+import {
+  ChartArea,
+  CircleHelp,
+  FileSignature,
+  ReceiptIndianRupee,
+} from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Card, CardContent } from "./ui/card";
@@ -33,7 +38,16 @@ const Sidebar = async () => {
               >
                 <CircleHelp size={16} />
 
+                {/* <span className="mx-2 text-sm font-medium">Pricing</span> */}
                 <span className="mx-2 text-sm font-medium">How to use?</span>
+              </Link>
+              <Link
+                className="flex items-center px-3 py-2 text-black transition-colors duration-300 transform rounded-lg dark:text-white/80 hover:bg-balck dark:hover:bg-balck  dark:hover:bg-gray-50/10 hover:text-white/50"
+                href="/dashboard/pricing"
+              >
+                <ReceiptIndianRupee size={16} />
+
+                <span className="mx-2 text-sm font-medium">Pricing</span>
               </Link>
             </div>
           </nav>

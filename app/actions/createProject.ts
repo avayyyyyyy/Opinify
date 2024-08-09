@@ -14,9 +14,15 @@ export const submitProject = async ({
 }) => {
   const user = await auth();
 
+  const findUser = await prisma.user.findUnique({
+    where: {
+      email: user?.user?.email!,
+    },
+  });
+
   const projects = await prisma.project.findMany({
     where: {
-      userId: user?.user?.id,
+      userId: findUser?.id,
     },
   });
 
@@ -29,7 +35,7 @@ export const submitProject = async ({
     const schema = z.object({
       name: z.string(),
       url: z.string().url(),
-      description: z.string().min(10),
+      description: z.string().min(5),
     });
 
     const data = schema.safeParse({
@@ -42,13 +48,7 @@ export const submitProject = async ({
       console.log("Invalid data");
       throw new Error("Invalid data");
     }
-
-    const userId = await prisma.user.findUnique({
-      where: {
-        email: user?.user?.email!,
-      },
-    });
-    if (!userId) {
+    if (!findUser?.id) {
       console.log("User not found");
       throw new Error("User not found");
     }
@@ -58,7 +58,7 @@ export const submitProject = async ({
         name: name,
         url: url,
         description: description,
-        userId: userId?.id,
+        userId: findUser?.id,
       },
     });
 
