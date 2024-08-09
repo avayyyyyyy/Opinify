@@ -13,9 +13,12 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Loader } from "lucide-react";
 import { deleteProject } from "@/app/actions/deleteProject";
+import { useRouter } from "next/navigation";
 
 export default function DeleteProjectButton({ id }: { id: string }) {
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const handleDelete = async () => {
     setLoading(true);
@@ -23,7 +26,7 @@ export default function DeleteProjectButton({ id }: { id: string }) {
     console.log("Delete Data: ", data);
     if (data.success) {
       setLoading(false);
-      window.location.reload();
+      router.refresh();
     } else {
       setLoading(false);
     }
