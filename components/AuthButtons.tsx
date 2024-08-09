@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { Loader } from "lucide-react";
 import CreateProject from "./CreateProject";
 
 const AuthButtons = () => {

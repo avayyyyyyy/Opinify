@@ -40,11 +40,11 @@ export function FeedbackView({
     setLoading(true);
     const { success } = await deleteFeedback(projectId);
     if (success) {
-      console.log("Feedback deleted successfully");
+      // console.log("Feedback deleted successfully");
       setLoading(false);
       router.refresh();
     } else {
-      console.error("Failed to delete feedback");
+      // console.error("Failed to delete feedback");
       setLoading(false);
     }
   };

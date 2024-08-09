@@ -23,7 +23,7 @@ export default function DeleteProjectButton({ id }: { id: string }) {
   const handleDelete = async () => {
     setLoading(true);
     const data = await deleteProject(id);
-    console.log("Delete Data: ", data);
+    // console.log("Delete Data: ", data);
     if (data.success) {
       setLoading(false);
       router.refresh();
