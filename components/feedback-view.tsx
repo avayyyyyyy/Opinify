@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { deleteFeedback } from "@/app/actions/deleteFeedback";
 import { Loader } from "lucide-react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 type FeedbackViewProps = {
   name: string;
@@ -33,13 +34,15 @@ export function FeedbackView({
 }: FeedbackViewProps) {
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+
   const handleDelete = async () => {
     setLoading(true);
     const { success } = await deleteFeedback(projectId);
     if (success) {
       console.log("Feedback deleted successfully");
       setLoading(false);
-      window.location.reload();
+      router.reload();
     } else {
       console.error("Failed to delete feedback");
       setLoading(false);
