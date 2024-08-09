@@ -93,7 +93,7 @@ const CreateProject = () => {
           </div>
           <DialogFooter>
             {loading ? (
-              <Button disabled>
+              <Button disabled className="w-full">
                 <Loader size={16} className="animate-spin" />
               </Button>
             ) : (
