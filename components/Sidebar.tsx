@@ -6,12 +6,30 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "./ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { auth } from "@/lib/auth";
+import prisma from "@/lib/db";
 
 const Sidebar = async () => {
   const user = await auth();
+
+  const findUser = await prisma.user.findUnique({
+    where: {
+      email: user?.user?.email!,
+    },
+  });
+
+  const projects = await prisma.project.findMany({
+    where: {
+      userId: findUser?.id,
+    },
+  });
+
+  const progressLimit = (projects?.length * 100) / 5;
+
+  console.log(progressLimit);
 
   return (
     <div>
@@ -52,27 +70,42 @@ const Sidebar = async () => {
             </div>
           </nav>
           <div>
-            <Card className="w-full max-w-sm bg-card rounded-lg">
-              <CardContent className="p-3 grid gap-4">
-                <div className="flex items-center gap-4">
-                  <Avatar className="h-6 w-6">
-                    <AvatarImage
-                      src={user?.user?.image ?? ""}
-                      alt="userImage"
-                    />
-                    <AvatarFallback>{user?.user?.name?.[0]}</AvatarFallback>
-                  </Avatar>
-                  <div className="grid gap-1">
-                    <div className="font-semibold text-sm">
-                      {user?.user?.name}
-                    </div>
-                    <div className="text-muted-foreground text-xs">
-                      {user?.user?.email}
+            <div className="py-2">
+              <div className="flex justify-between">
+                {" "}
+                <label className="flex gap-1 py-2 items-center text-xs text-black uppercase dark:text-white/50">
+                  Project Limit
+                </label>
+                <label className="flex gap-1 py-2 items-center text-xs text-black uppercase dark:text-white/50">
+                  {projects?.length} / 5
+                </label>
+              </div>
+              <hr />
+              <Progress className="mb-2" value={progressLimit} />
+            </div>
+            <div>
+              <Card className="w-full max-w-sm bg-card rounded-lg">
+                <CardContent className="p-3 grid gap-4">
+                  <div className="flex items-center gap-4">
+                    <Avatar className="h-6 w-6">
+                      <AvatarImage
+                        src={user?.user?.image ?? ""}
+                        alt="userImage"
+                      />
+                      <AvatarFallback>{user?.user?.name?.[0]}</AvatarFallback>
+                    </Avatar>
+                    <div className="grid gap-1">
+                      <div className="font-semibold text-sm">
+                        {user?.user?.name}
+                      </div>
+                      <div className="text-muted-foreground text-xs">
+                        {user?.user?.email}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </aside>
