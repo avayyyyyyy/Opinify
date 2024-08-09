@@ -74,7 +74,7 @@ declare global {
             <TabsTrigger value="html">HTML</TabsTrigger>
             <TabsTrigger value="nextjs">Next.js</TabsTrigger>
           </TabsList>
-          <TabsContent value="html" className="max-h-[40vh] overflow-scroll">
+          <TabsContent value="html" className="h-auto overflow-scroll">
             <SyntaxHighlighter
               language="javascript"
               style={funky}
@@ -89,7 +89,7 @@ declare global {
               {htmlCodeString}
             </SyntaxHighlighter>
           </TabsContent>
-          <TabsContent value="nextjs" className="max-h-[40vh] overflow-scroll">
+          <TabsContent value="nextjs" className="h-auto overflow-scroll">
             <SyntaxHighlighter
               language="jsx"
               style={funky}
