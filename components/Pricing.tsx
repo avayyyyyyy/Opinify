@@ -9,7 +9,7 @@ const pricingPlans = [
     description:
       "Get started with essential feedback tools for small businesses.",
     monthlyPrice: "Free",
-    link: "https://opinify.com/basic",
+    link: "https://opinify.com/",
     features: [
       "Limited to 5 projects",
       "Custom feedback forms",
@@ -24,7 +24,7 @@ const pricingPlans = [
     description:
       "Advanced features and dedicated support for growing enterprises.",
     monthlyPrice: 4999,
-    link: "https://opinify.com/pro",
+    link: "https://opinify.com/",
     features: [
       "Unlimited projects",
       "Everything in Basic plan",
@@ -38,13 +38,13 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <section className="relative w-full overflow-hidden flex flex-col justify-center py-12 text-black lg:px-2 lg:py-12">
+    <section className="relative w-full overflow-hidden text-center flex flex-col justify-center py-12 text-black lg:px-2 lg:py-12">
       <div className="relative z-10 flex flex-col items-center justify-center gap-4">
         {/* <p className="text-red-100 w-fit  bg-red-600 px-2 py-1 text-xs mt-10 mx-auto rounded-full">
           Feature not implemented yet... 🥲
         </p> */}
-        <div className="flex w-full flex-col items-start justify-center space-y-4 md:items-center">
-          <div className="mb-2 inline-block rounded-full bg-zinc-100 px-2 py-[0.20rem] text-xs font-medium uppercase text-zinc-500 dark:bg-zinc-200">
+        <div className="flex w-[80%] flex-col items-start justify-center space-y-4 md:items-center">
+          <div className="mb-2 inline-block mx-auto rounded-full bg-zinc-100 px-2 py-[0.20rem] text-xs font-medium uppercase text-zinc-500 dark:bg-zinc-200">
             Pricing
           </div>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-200">
@@ -56,7 +56,7 @@ const Pricing = () => {
           </p>
         </div>
       </div>
-      <div className="relative z-10 mt-10 mx-auto flex max-w-[50vw] flex-col gap-8 lg:flex-row lg:gap-4">
+      <div className="relative z-10 mt-10 mx-auto flex md:max-w-[50vw] max-w-[80vw] flex-col gap-8 lg:flex-row lg:gap-4">
         {pricingPlans.map((plan, index) => (
           <div
             key={index}
