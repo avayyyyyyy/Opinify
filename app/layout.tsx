@@ -87,9 +87,7 @@ export default async function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body
-        className={`${inter.className} bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.1),rgba(255,255,255,0))]`}
-      >
+      <body className={`${inter.className} `}>
         <SessionProvider>
           <ThemeProvider
             attribute="class"

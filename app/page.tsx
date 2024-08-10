@@ -19,6 +19,7 @@ export default async function Home() {
   // console.log("data in server side:", data);
 
   // [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#FCC700_200%)]
+  // bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.1),rgba(255,255,255,0))]
 
   return (
     <>
