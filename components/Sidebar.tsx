@@ -11,6 +11,7 @@ import { Card, CardContent } from "./ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/db";
+import { redirect } from "next/navigation";
 
 const Sidebar = async () => {
   const user = await auth();
@@ -20,6 +21,10 @@ const Sidebar = async () => {
       email: user?.user?.email!,
     },
   });
+
+  if (!user) {
+    return redirect("/");
+  }
 
   const projects = await prisma.project.findMany({
     where: {
