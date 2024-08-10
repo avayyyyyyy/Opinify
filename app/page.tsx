@@ -16,15 +16,9 @@ export default async function Home() {
     redirect("/dashboard");
   }
 
-  // console.log("data in server side:", data);
-
-  // [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#FCC700_200%)]
-  // bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.1),rgba(255,255,255,0))]
-
   return (
     <>
-      {/* <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950"></div> */}
-      <main className="flex z-10 flex-col items-center mx-auto md:p-24 px-24   py-10">
+      <main className="flex z-10 flex-col bg-black items-center mx-auto md:p-24 px-24   py-10">
         <Particles
           className="absolute inset-0"
           quantity={100}
@@ -67,7 +61,7 @@ export default async function Home() {
         >
           <div className="relative mb-10 flex md:max-w-6xl justify-center overflow-hidden">
             <Image
-              src="https://utfs.io/f/b4bd6351-47a2-4342-a641-d01658b3efb3-6ie4x0.jpg"
+              src="https://utfs.io/f/eaab3c99-701a-4c0c-b2e9-c7c88901dad2-6ie4x0.png"
               alt="hero-section"
               width={1400}
               height={1400}
@@ -92,7 +86,7 @@ export default async function Home() {
         >
           {/* <div className="relative mb-10 flex md:max-w-6xl justify-center overflow-hidden"> */}
           <Image
-            src="https://utfs.io/f/b4bd6351-47a2-4342-a641-d01658b3efb3-6ie4x0.jpg"
+            src="https://utfs.io/f/eaab3c99-701a-4c0c-b2e9-c7c88901dad2-6ie4x0.png"
             alt="hero-section"
             width={1400}
             height={1400}
