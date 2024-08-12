@@ -5,6 +5,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import Particles from "@/components/magicui/particles";
 import { auth } from "@/lib/auth";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
@@ -26,6 +27,25 @@ export default async function Home() {
           color={"#ffffff"}
           refresh
         />
+        <BlurFade
+          delay={time * 0.5}
+          inView
+          className="flex items-center justify-center"
+        >
+          <Link
+            className="mb-6"
+            href={
+              "https://peerlist.io/avayyyyyyy/project/opinify--feedback-collection-saas"
+            }
+          >
+            <Image
+              src={"https://peerlist.io/images/Launch_Badge_Dark.svg"}
+              width={150}
+              height={150}
+              alt="peerlist"
+            />
+          </Link>
+        </BlurFade>
         <BlurFade
           delay={time * 1}
           inView
