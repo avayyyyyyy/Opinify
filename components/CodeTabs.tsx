@@ -11,8 +11,9 @@ const EmbedCodeTabs = ({ id }: { id: string }) => {
 
   const htmlCodeString = `
 <body>
-  <widget-web-component projectid="${id}"></widget-web-component>
-
+  <div style="position: fixed; bottom: 15px; right: 15px">
+    <widget-web-component projectid="${id}"></widget-web-component>
+  </div>
   <!-- Include your UMD build -->
   <script src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
 </body>
@@ -38,8 +39,10 @@ declare global {
 
 // Next.js Body Content
 
-  <widget-web-component projectid="${id}"></widget-web-component>
-
+  <div style="position: fixed; bottom: 15px; right: 15px">
+    <widget-web-component projectid="${id}"></widget-web-component>
+  </div>
+  
   <script async src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
 
   `;

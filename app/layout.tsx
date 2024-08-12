@@ -114,8 +114,9 @@ export default async function RootLayout({
             <Toaster richColors closeButton duration={4000} />
           </ThemeProvider>
         </SessionProvider>
-        <widget-web-component projectid="clzqmvwjs0001ownulyf1v7iv"></widget-web-component>
-
+        <div style={{ position: "fixed", bottom: "50px", right: "20px" }}>
+          <widget-web-component projectid="clzqmvwjs0001ownulyf1v7iv"></widget-web-component>
+        </div>
         <script
           async
           src="https://opinify-widget-w24d.vercel.app/widget.umd.js"
