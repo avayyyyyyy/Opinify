@@ -123,7 +123,7 @@ export const metadata: Metadata = {
         url: "https://utfs.io/f/9e53247a-090e-4b56-ae1e-03c9e4bff653-md47.png",
         width: 1200,
         height: 800,
-        alt: "Opinify Screenshot",
+        alt: "Opinify",
       },
     ],
     type: "website",
