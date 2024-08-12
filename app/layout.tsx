@@ -120,12 +120,6 @@ export const metadata: Metadata = {
     siteName: "Opinify",
     images: [
       {
-        url: "https://utfs.io/f/8bb4fcc0-1962-4846-a103-629911dfe0dd-dfa5bb.png",
-        width: 800,
-        height: 600,
-        alt: "Opinify Logo",
-      },
-      {
         url: "https://utfs.io/f/023a0508-85a2-4e2e-a1b8-a537411e59e7-69gea9.webp",
         width: 1200,
         height: 800,
