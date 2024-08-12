@@ -6,6 +6,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
+import favicon32 from "../public/favicon-32x32.png";
+import favicon16 from "../public/favicon-16x16.png";
+import faviconappletouch from "../public/apple-touch-icon.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -182,21 +185,11 @@ export default async function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png"
+          href={`${faviconappletouch}`}
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${favicon32}`} />
+        <link rel="icon" type="image/png" sizes="16x16" href={`${favicon16}`} />
+        <link rel="manifest" href="../public/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={`${inter.className} `}>
