@@ -10,9 +10,9 @@ import { SessionProvider } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Opinify - Real-Time User Feedback Platform",
+  title: "Real-Time User Feedback | Opinify",
   description:
-    "Opinify is a cutting-edge platform designed to collect, manage, and analyze real-time user feedback. Created by Shubhankit Jain, Opinify enables businesses to gain immediate insights through customizable feedback widgets, multi-platform integration, and comprehensive analytics.",
+    "Collect, manage, and analyze real-time user feedback with Opinify's cutting-edge platform.",
   keywords: [
     "Opinify",
     "user feedback",
@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "data-driven",
     "analytics",
     "customer engagement",
+    "customer experience",
+    "feedback management",
+    "user insights",
   ],
   authors: [{ name: "Shubhankit Jain", url: "https://www.opinify.in/" }],
   creator: "Shubhankit Jain",
@@ -36,9 +39,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Opinify - Real-Time User Feedback Platform",
+    title: "Real-Time User Feedback | Opinify",
     description:
-      "Opinify is a cutting-edge platform designed to collect, manage, and analyze real-time user feedback. Created by Shubhankit Jain, Opinify enables businesses to gain immediate insights through customizable feedback widgets, multi-platform integration, and comprehensive analytics.",
+      "Collect, manage, and analyze real-time user feedback with Opinify's cutting-edge platform.",
     url: "https://www.opinify.in",
     siteName: "Opinify",
     images: [
@@ -48,14 +51,20 @@ export const metadata: Metadata = {
         height: 600,
         alt: "Opinify Logo",
       },
+      {
+        url: "https://utfs.io/f/023a0508-85a2-4e2e-a1b8-a537411e59e7-69gea9.webp",
+        width: 1200,
+        height: 800,
+        alt: "Opinify Screenshot",
+      },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Opinify - Real-Time User Feedback Platform",
+    title: "Real-Time User Feedback | Opinify",
     description:
-      "Opinify is a cutting-edge platform designed to collect, manage, and analyze real-time user feedback. Created by Shubhankit Jain, Opinify enables businesses to gain immediate insights through customizable feedback widgets, multi-platform integration, and comprehensive analytics.",
+      "Collect, manage, and analyze real-time user feedback with Opinify's cutting-edge platform.",
     images: [
       "https://utfs.io/f/8bb4fcc0-1962-4846-a103-629911dfe0dd-dfa5bb.png",
     ],
