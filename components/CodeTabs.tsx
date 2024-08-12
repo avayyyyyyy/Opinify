@@ -13,10 +13,6 @@ const EmbedCodeTabs = ({ id }: { id: string }) => {
 <body>
   <widget-web-component projectid="${id}"></widget-web-component>
 
-  <!-- Include React and ReactDOM from CDN -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
   <!-- Include your UMD build -->
   <script src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
 </body>
@@ -44,8 +40,6 @@ declare global {
 
   <widget-web-component projectid="${id}"></widget-web-component>
 
-  <script async src="https://unpkg.com/react@18/umd/react.development.js" ></script>
-  <script async src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script async src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
 
   `;

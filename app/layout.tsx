@@ -60,6 +60,19 @@ export const metadata: Metadata = {
   },
 };
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "widget-web-component": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      > & {
+        projectid: string;
+      };
+    }
+  }
+}
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -101,6 +114,12 @@ export default async function RootLayout({
             <Toaster richColors closeButton duration={4000} />
           </ThemeProvider>
         </SessionProvider>
+        <widget-web-component projectid="clzqmvwjs0001ownulyf1v7iv"></widget-web-component>
+
+        <script
+          async
+          src="https://opinify-widget-w24d.vercel.app/widget.umd.js"
+        ></script>
       </body>
     </html>
   );
