@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Opinify",
     images: [
       {
-        url: "/Logo.png",
+        url: "https://utfs.io/f/8bb4fcc0-1962-4846-a103-629911dfe0dd-dfa5bb.png",
         width: 800,
         height: 600,
         alt: "Opinify Logo",
@@ -52,11 +52,13 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    // card: "summary_large_image",
+    card: "summary_large_image",
     title: "Opinify - Real-Time User Feedback Platform",
     description:
       "Opinify is a cutting-edge platform designed to collect, manage, and analyze real-time user feedback. Created by Shubhankit Jain, Opinify enables businesses to gain immediate insights through customizable feedback widgets, multi-platform integration, and comprehensive analytics.",
-    // images: ["https://www.opinify.com/twitter-card.png"],
+    images: [
+      "https://utfs.io/f/8bb4fcc0-1962-4846-a103-629911dfe0dd-dfa5bb.png",
+    ],
   },
 };
 
