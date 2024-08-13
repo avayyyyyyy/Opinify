@@ -6,9 +6,9 @@
 
 - **Embeddable Feedback Forms**: Easily embed feedback forms on your website.
 - **Centralized Dashboard**: View and manage all feedback from a single, intuitive dashboard.
-- **Customizable Modal**: Customize the modal design to enhance the user experience.
+- **Customizable Modal**: Customize the modal design to enhance the user experience. ( _🚨 Not implemented yet_)
 - **Real-time Updates**: Receive real-time updates and notifications for feedback forms and the dashboard.
-- **Analytics & Reporting**: Access detailed feedback reports and analytics insights.
+- **Analytics & Reporting**: Access detailed feedback reports and analytics insights. ( _🚨 Not implemented yet_)
 
 ## Installation
 
@@ -89,10 +89,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Abhi Jain - [jabhi465@gmail.com](mailto:jabhi465@gmail.com)
+Shubhankit Jain - [jabhi465@gmail.com](mailto:jabhi465@gmail.com)
 
 Project Link: [https://github.com/avayyyyyyy/opinify](https://github.com/avayyyyyyy/opinify)
-
----
-
-Feel free to adjust or add more details as needed!
