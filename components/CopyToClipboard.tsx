@@ -18,7 +18,7 @@ const CopyToClipboard = ({ codeString }: { codeString: string }) => {
 
   return (
     <div>
-      <TooltipProvider>
+      <TooltipProvider delayDuration={0}>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button onClick={handleCopy} variant={"outline"} size={"icon"}>
