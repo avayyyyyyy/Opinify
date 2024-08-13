@@ -80,7 +80,7 @@ export default async function Home() {
         <BlurFade
           delay={time * 4}
           inView
-          className=" items-center justify-center flex"
+          className=" items-center justify-center flex mb-2"
         >
           <HomeAvatars />
         </BlurFade>
