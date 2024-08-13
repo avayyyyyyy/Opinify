@@ -39,7 +39,7 @@ const pricingPlans = [
 const Pricing = () => {
   return (
     <section className="relative w-full overflow-hidden text-center flex flex-col justify-center py-12 text-black lg:px-2 lg:py-12">
-      <div className="relative z-10 flex flex-col items-center justify-center gap-4">
+      <div className="relative flex flex-col items-center justify-center gap-4">
         {/* <p className="text-red-100 w-fit  bg-red-600 px-2 py-1 text-xs mt-10 mx-auto rounded-full">
           Feature not implemented yet... 🥲
         </p> */}
@@ -56,7 +56,7 @@ const Pricing = () => {
           </p>
         </div>
       </div>
-      <div className="relative z-10 mt-10 mx-auto flex md:max-w-[50vw] max-w-[80vw] flex-col gap-8 lg:flex-row lg:gap-4">
+      <div className="relative mt-10 mx-auto flex md:max-w-[50vw] max-w-[80vw] flex-col gap-8 lg:flex-row lg:gap-4">
         {pricingPlans.map((plan, index) => (
           <div
             key={index}
