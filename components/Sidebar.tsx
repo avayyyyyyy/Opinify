@@ -101,7 +101,9 @@ const Sidebar = async () => {
                     </Avatar>
                     <div className="grid gap-1">
                       <div className="font-semibold text-sm">
-                        {user?.user?.name}
+                        {user?.user?.name?.length! > 18
+                          ? `${user?.user?.name?.slice(0, 18)}...`
+                          : user?.user?.name}
                       </div>
                       <div className="text-muted-foreground text-xs">
                         {user?.user?.email?.length! > 18

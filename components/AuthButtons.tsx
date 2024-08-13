@@ -42,7 +42,7 @@ const AuthButtons = () => {
       ) : (
         <div className="flex gap-2">
           <Button onClick={() => signIn("google")} variant="secondary">
-            Log in
+            Sign in
           </Button>
           <Button asChild variant="outline">
             <Link href="https://github.com/avayyyyyyy/opinify">

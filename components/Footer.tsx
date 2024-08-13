@@ -51,7 +51,7 @@ const Footer = () => {
       <p className="text-xs text-gray-600 dark:text-gray-100">
         Copyright © {new Date().getFullYear()}{" "}
         <a
-          href="https://twitter.com/shubhcodes"
+          href="https://shubhcodes.me"
           className=" text-zinc-500 underline hover:text-zinc-500 "
         >
           ShubhCodes
