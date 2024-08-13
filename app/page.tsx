@@ -1,6 +1,7 @@
 import Accordian from "@/components/Accordian";
 import FeatureSections from "@/components/FeaturesSection";
 import GetStartedButton from "@/components/GetStartedButton";
+import HomeAvatars from "@/components/HomeAvatars";
 import HowToUse from "@/components/HowToUse";
 import BlurFade from "@/components/magicui/blur-fade";
 import { BorderBeam } from "@/components/magicui/border-beam";
@@ -81,6 +82,13 @@ export default async function Home() {
           inView
           className=" items-center justify-center hidden md:flex"
         >
+          <HomeAvatars />
+        </BlurFade>
+        <BlurFade
+          delay={time * 5}
+          inView
+          className=" items-center justify-center hidden md:flex"
+        >
           <div className="relative mb-10 flex md:max-w-6xl justify-center overflow-hidden">
             <Image
               src="https://utfs.io/f/eaab3c99-701a-4c0c-b2e9-c7c88901dad2-6ie4x0.png"
@@ -102,7 +110,7 @@ export default async function Home() {
         </BlurFade>
 
         <BlurFade
-          delay={time * 4}
+          delay={time * 6}
           inView
           className="flex md:hidden items-center justify-center w-[90vw]"
         >
@@ -127,7 +135,7 @@ export default async function Home() {
         </BlurFade>
 
         <BlurFade
-          delay={time * 5}
+          delay={time * 7}
           inView
           className="flex md:hidden items-center justify-center"
         >
