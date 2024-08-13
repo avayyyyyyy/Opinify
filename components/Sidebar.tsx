@@ -63,15 +63,13 @@ const Sidebar = async () => {
 
                 <span className="mx-2 text-sm font-medium">Pricing</span>
               </Link>
-              <Link
+              {/* <Link
                 className="flex items-center px-3 py-2 text-black transition-colors duration-300 transform rounded-lg dark:text-white/80 hover:bg-balck dark:hover:bg-balck  dark:hover:bg-gray-50/10 hover:text-white/50"
                 href="/dashboard/steps"
               >
                 <CircleHelp size={16} />
-
-                {/* <span className="mx-2 text-sm font-medium">Pricing</span> */}
                 <span className="mx-2 text-sm font-medium">How to use?</span>
-              </Link>
+              </Link> */}
             </div>
           </nav>
           <div>

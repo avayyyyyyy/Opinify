@@ -1,5 +1,7 @@
+import Accordian from "@/components/Accordian";
 import FeatureSections from "@/components/FeaturesSection";
 import GetStartedButton from "@/components/GetStartedButton";
+import HowToUse from "@/components/HowToUse";
 import BlurFade from "@/components/magicui/blur-fade";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Particles from "@/components/magicui/particles";
@@ -137,6 +139,12 @@ export default async function Home() {
           className="md:flex hidden items-center justify-center"
         >
           <FeatureSections />
+        </BlurFade>
+        <BlurFade delay={time * 1} inView className="flex justify-between">
+          <HowToUse />
+        </BlurFade>
+        <BlurFade delay={time * 1} inView className="flex justify-center">
+          <Accordian />
         </BlurFade>
       </main>
     </>
