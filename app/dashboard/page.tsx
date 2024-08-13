@@ -30,7 +30,7 @@ const Page = async () => {
   console.log(data);
 
   return (
-    <div className="w-full p-4 min-h-[80vh]">
+    <div className="w-full min-h-[80vh]">
       <div className="flex justify-between items-center py-3 px-5">
         {" "}
         <h1 className="md:text-3xl text-xl font-semibold">Dashboard Page 📄</h1>
