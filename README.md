@@ -1,37 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Opinify.in
 
-## Getting Started
+**Opinify.in** is a feedback collection platform that provides embeddable feedback forms for websites. Users can collect feedback directly from their websites and manage it through a centralized dashboard. This SaaS project is developed using React and TypeScript.
 
-First, run the development server:
+## Features
+
+- **Embeddable Feedback Forms**: Easily embed feedback forms on your website.
+- **Centralized Dashboard**: View and manage all feedback from a single, intuitive dashboard.
+- **Customizable Modal**: Customize the modal design to enhance the user experience.
+- **Real-time Updates**: Receive real-time updates and notifications for feedback forms and the dashboard.
+- **Analytics & Reporting**: Access detailed feedback reports and analytics insights.
+
+## Installation
+
+### Prerequisites
+
+- Node.js (>=14.x)
+- npm (>=6.x) or yarn
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/avayyyyyyy/opinify.git
+cd opinify
+```
+
+### Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+bun install
+```
+
+### Run the Development Server
 
 ```bash
 npm run dev
 # or
 yarn dev
 # or
-pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to `http://localhost:3000` to see the application in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Environment Variables**: Create a `.env` file in the root directory and set the required environment variables.
 
-## Learn More
+  ```env
+  NEXTAUTH_SECRET=
+  DATABASE_URL=
+  GOOGLE_CLIENT_ID=
+  GOOGLE_CLIENT_SECRET=
+  AUTH_TRUST_HOST=http://localhost:3000
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+- **Feedback Form Integration**: Embed the feedback form into your website using the provided embed code.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Embedding Feedback Form**:
 
-## Deploy on Vercel
+   - Go to your dashboard and create a new feedback form.
+   - Copy the provided embed code and paste it into your website's HTML where you want the feedback form to appear.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Viewing Feedback**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Opinify
+   - Log in to the Opinify.in dashboard.
+   - Navigate to the 'Feedback' section to view and manage collected feedback.
+
+## Contributing
+
+Contributions are welcome! Please follow these guidelines to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature/your-feature`).
+6. Create a new Pull Request.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Abhi Jain - [jabhi465@gmail.com](mailto:jabhi465@gmail.com)
+
+Project Link: [https://github.com/avayyyyyyy/opinify](https://github.com/avayyyyyyy/opinify)
+
+---
+
+Feel free to adjust or add more details as needed!
