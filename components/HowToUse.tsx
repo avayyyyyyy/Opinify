@@ -9,7 +9,7 @@ const HowToUse = () => {
   return (
     <>
       <div>
-        <div className="min-w-[90vw] flex w-full flex-col items-center justify-center">
+        <div className="min-w-[90vw] mt-10 flex w-full flex-col items-center justify-center">
           <h1 className="mb-2 text-center w-[60vw] md:w-fit text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
             How to use Opinify?
           </h1>
@@ -22,7 +22,7 @@ const HowToUse = () => {
                 Enter Website details
               </div>
               <Image
-                className="rounded-md p-2"
+                className="rounded-md p-2 md:hover:scale-105 duration-150"
                 src={process1}
                 width={300}
                 height={300}
@@ -38,7 +38,7 @@ const HowToUse = () => {
                 Create Project
               </div>
               <Image
-                className="rounded-md p-2 m-auto"
+                className="rounded-md p-2 md:mt-20 mx-auto md:hover:scale-105 duration-150"
                 src={process2}
                 width={120}
                 height={120}
@@ -54,7 +54,14 @@ const HowToUse = () => {
                 Embed Code
               </div>
               <Image
-                className="rounded-md p-2"
+                className="rounded-md hidden md:block p-2 md:hover:scale-105 duration-150"
+                src={process3}
+                width={350}
+                height={350}
+                alt="image"
+              />
+              <Image
+                className="rounded-md md:hidden p-2 md:hover:scale-105 duration-150"
                 src={process3}
                 width={300}
                 height={300}

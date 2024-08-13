@@ -80,7 +80,7 @@ export default async function Home() {
         <BlurFade
           delay={time * 4}
           inView
-          className=" items-center justify-center hidden md:flex"
+          className=" items-center justify-center flex"
         >
           <HomeAvatars />
         </BlurFade>
@@ -110,11 +110,10 @@ export default async function Home() {
         </BlurFade>
 
         <BlurFade
-          delay={time * 6}
+          delay={time * 1}
           inView
           className="flex md:hidden items-center justify-center w-[90vw]"
         >
-          {/* <div className="relative mb-10 flex md:max-w-6xl justify-center overflow-hidden"> */}
           <Image
             src="https://utfs.io/f/eaab3c99-701a-4c0c-b2e9-c7c88901dad2-6ie4x0.png"
             alt="hero-section"
@@ -127,7 +126,7 @@ export default async function Home() {
           />
           <BorderBeam
             className="rounded-md"
-            size={250}
+            size={150}
             duration={12}
             delay={9}
           />
@@ -135,7 +134,7 @@ export default async function Home() {
         </BlurFade>
 
         <BlurFade
-          delay={time * 7}
+          delay={time * 1}
           inView
           className="flex md:hidden items-center justify-center"
         >

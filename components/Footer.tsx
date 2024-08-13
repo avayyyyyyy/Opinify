@@ -73,3 +73,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// Made with ❤️ by ShubhCodes.
