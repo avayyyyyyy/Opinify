@@ -130,11 +130,9 @@ export default async function Home() {
             duration={12}
             delay={9}
           />
-          {/* </div> */}
         </BlurFade>
-
         <BlurFade
-          delay={time * 1}
+          delay={time * 6}
           inView
           className="flex md:hidden items-center justify-center"
         >
@@ -143,7 +141,7 @@ export default async function Home() {
         <BlurFade
           delay={time * 1}
           inView
-          className="md:flex hidden items-center justify-center"
+          className="md:flex hidden  items-center justify-center"
         >
           <FeatureSections />
         </BlurFade>
