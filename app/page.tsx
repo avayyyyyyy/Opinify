@@ -110,7 +110,7 @@ export default async function Home() {
         </BlurFade>
 
         <BlurFade
-          delay={time * 1}
+          delay={time * 5}
           inView
           className="flex md:hidden items-center justify-center w-[90vw]"
         >
