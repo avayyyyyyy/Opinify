@@ -20,7 +20,7 @@ const HowToUse = () => {
             <Link
               className="text-slate-200 font-semibold hover:underline"
               target="_blank"
-              href={"https://www.youtube.com/watch?v=o86eMxDF8N8"}
+              href={"https://youtu.be/xF6oBcf18Hs"}
             >
               Click Here ▶️
             </Link>
