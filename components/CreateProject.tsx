@@ -12,7 +12,7 @@ import {
 } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { Loader, SquarePlus } from "lucide-react";
+import { Loader, PlusSquareIcon, SquarePlus } from "lucide-react";
 import { submitProject } from "@/app/actions/createProject";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -97,7 +97,10 @@ const CreateProject = () => {
                 <Loader size={16} className="animate-spin" />
               </Button>
             ) : (
-              <Button type="submit">Create</Button>
+              <Button type="submit" className="w-full">
+                Create Project
+                <PlusSquareIcon size={16} className="ml-1" />
+              </Button>
             )}
           </DialogFooter>
         </form>
