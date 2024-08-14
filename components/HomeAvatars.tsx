@@ -33,7 +33,7 @@ const HomeAvatars = async () => {
         ))}
       </div>
       <p className="mx-auto my-3 text-slate-200">
-        {projectLength.toString()}+ Websites Embedded!
+        {projectLength.toString() + 1}+ are currently using Opinify!
       </p>
     </div>
   );
