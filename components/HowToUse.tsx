@@ -4,6 +4,8 @@ import process1 from "../public/process1.png";
 import process2 from "../public/process2.png";
 import process3 from "../public/process3.png";
 import { ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const HowToUse = () => {
   return (
@@ -13,6 +15,17 @@ const HowToUse = () => {
           <h1 className="mb-2 text-center w-[60vw] md:w-fit text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
             How to use Opinify?
           </h1>
+          <p className="max-w-md text-center text-sm text-gray-400 dark:text-gray-400">
+            For video tutorial{" "}
+            <Link
+              className="text-slate-200 font-semibold hover:underline"
+              target="_blank"
+              href={"https://www.youtube.com/watch?v=o86eMxDF8N8"}
+            >
+              Click Here ▶️
+            </Link>
+            {/* </Button> */}
+          </p>
           <div className="md:flex md:flex-row flex flex-col m-auto md:gap-x-10 mt-6">
             <div className="flex flex-col justify-center items-center">
               <div className="max-w-md font-semibold text-center text-lg text-gray-400 dark:text-gray-100">
