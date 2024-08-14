@@ -91,4 +91,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Shubhankit Jain - [jabhi465@gmail.com](mailto:jabhi465@gmail.com)
 
-Project Link: [https://github.com/avayyyyyyy/opinify](https://github.com/avayyyyyyy/opinify)
+Project Link: [https://opinify.in/](https://opinify.in/)
