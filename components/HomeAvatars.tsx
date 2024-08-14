@@ -32,7 +32,7 @@ const HomeAvatars = async () => {
           </Avatar>
         ))}
       </div>
-      <p className="mx-auto my-3 text-slate-400">
+      <p className="mx-auto my-3 text-center text-slate-400">
         More than{" "}
         <span className="text-slate-200">{projectLength.toString()}</span>{" "}
         websites are currently using Opinify!
