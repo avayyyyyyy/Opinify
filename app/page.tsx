@@ -89,7 +89,7 @@ export default async function Home() {
           inView
           className=" items-center justify-center hidden md:flex"
         >
-          <div className="relative mb-10 flex md:max-w-6xl justify-center overflow-hidden">
+          <div className="relative flex md:max-w-6xl justify-center overflow-hidden">
             <Image
               src="https://utfs.io/f/eaab3c99-701a-4c0c-b2e9-c7c88901dad2-6ie4x0.png"
               alt="hero-section"
