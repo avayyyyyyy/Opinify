@@ -34,7 +34,7 @@ const Accordian = () => {
           FAQ&apos;s
         </h1>
         <p className="max-w-md text-center text-sm text-gray-400 dark:text-gray-400">
-          Some common FAQ&apos;s of Opinify
+          Some common FAQ&apos;s about Opinify
         </p>
         <Accordion type="single" collapsible className="w-full text-sm ">
           {faqData.map((item) => (
