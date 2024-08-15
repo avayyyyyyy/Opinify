@@ -222,7 +222,7 @@ export default async function RootLayout({
         <link rel="canonical" href="https://www.opinify.in" />
         <title>Real-Time User Feedback | Opinify</title>
       </head>
-      <body className={`${inter.className} `}>
+      <body className={`${inter.className}`}>
         <SessionProvider>
           <ThemeProvider
             attribute="class"
@@ -231,7 +231,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
-            <div className="z-[10]">{children}</div>
+            <div className="z-[10] overflow-x-hidden">{children}</div>
             <Footer />
             <Toaster richColors closeButton duration={4000} />
           </ThemeProvider>

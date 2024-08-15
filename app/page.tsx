@@ -22,7 +22,7 @@ export default async function Home() {
 
   return (
     <>
-      <main className="flex z-10 flex-col overflow-x-hidden bg-black items-center mx-auto md:p-24 px-24   py-10">
+      <main className="flex z-10 flex-col bg-black items-center mx-auto md:p-24 px-24   py-10">
         <Particles
           className="absolute inset-0"
           quantity={100}
