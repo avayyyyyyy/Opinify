@@ -192,6 +192,35 @@ export default async function RootLayout({
         />
         <link rel="manifest" href="/public/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Real-Time User Feedback | Opinify" />
+        <meta
+          property="og:description"
+          content="Collect, manage, and analyze real-time user feedback with Opinify's cutting-edge platform. Enhance customer engagement and experience with data-driven insights and comprehensive feedback management tools."
+        />
+        <meta property="og:url" content="https://www.opinify.in" />
+        <meta property="og:site_name" content="Opinify" />
+        <meta
+          property="og:image"
+          content="https://utfs.io/f/9e53247a-090e-4b56-ae1e-03c9e4bff653-md47.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:title"
+          content="Real-Time User Feedback | Opinify"
+        />
+        <meta
+          property="twitter:description"
+          content="Collect, manage, and analyze real-time user feedback with Opinify's cutting-edge platform. Enhance customer engagement and experience with data-driven insights and comprehensive feedback management tools."
+        />
+        <meta
+          property="twitter:image"
+          content="https://utfs.io/f/8bb4fcc0-1962-4846-a103-629911dfe0dd-dfa5bb.png"
+        />
+        <link rel="canonical" href="https://www.opinify.in" />
+        <title>Real-Time User Feedback | Opinify</title>
       </head>
       <body className={`${inter.className} `}>
         <SessionProvider>
