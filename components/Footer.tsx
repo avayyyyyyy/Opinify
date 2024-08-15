@@ -58,7 +58,7 @@ const Footer = () => {
         </a>{" "}
       </p>
       <div className="flex gap-4">
-        <SocialLink href="https://x.com/shubhcodes" icon={XIcon}>
+        <SocialLink href="https://x.com/opinifyin" icon={XIcon}>
           Follow me on X
         </SocialLink>
         <SocialLink
