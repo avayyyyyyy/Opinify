@@ -25,7 +25,7 @@ type FeedbackViewProps = {
 };
 
 // Function to split long text without spaces
-const splitLongText = (text: string, maxLength: number = 80): string => {
+const splitLongText = (text: string, maxLength: number = 50): string => {
   if (text.length <= maxLength) return text;
 
   const regex = new RegExp(`.{1,${maxLength}}`, "g");
@@ -88,7 +88,7 @@ export function FeedbackView({
           </div>
         </div>
         <Separator />
-        <div className="py-6 text-sm leading-loose overflow-auto max-h-60 whitespace-pre-wrap text-muted-foreground">
+        <div className="py-6 text-sm leading-loose overflow-x-hidden max-h-60 whitespace-pre-wrap text-wrap text-muted-foreground">
           <p>Feedback: {formattedFeedback}</p>
         </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
