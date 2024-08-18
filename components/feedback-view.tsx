@@ -20,8 +20,16 @@ type FeedbackViewProps = {
   rating: number;
   feedback: string;
   projectId: string;
-  submitted: string; // Consider using a more specific type if needed
+  submitted: string;
   avatarSrc?: string;
+};
+
+// Function to split long text without spaces
+const splitLongText = (text: string, maxLength: number = 80): string => {
+  if (text.length <= maxLength) return text;
+
+  const regex = new RegExp(`.{1,${maxLength}}`, "g");
+  return text.match(regex)?.join("\n") || text;
 };
 
 export function FeedbackView({
@@ -33,28 +41,27 @@ export function FeedbackView({
   submitted,
 }: FeedbackViewProps) {
   const [loading, setLoading] = useState(false);
-
   const router = useRouter();
 
   const handleDelete = async () => {
     setLoading(true);
     const { success } = await deleteFeedback(projectId);
     if (success) {
-      // console.log("Feedback deleted successfully");
       setLoading(false);
       router.refresh();
     } else {
-      // console.error("Failed to delete feedback");
       setLoading(false);
     }
   };
+
+  const formattedFeedback = splitLongText(feedback);
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline">View Review</Button>
       </DialogTrigger>
-      <DialogContent className="w-full max-w-2xl p-6 md:p-8 bg-background rounded-lg shadow-lg">
+      <DialogContent className="md:w-full w-[95vw] p-6 md:p-8 bg-background rounded-lg shadow-lg">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-4">
             <Avatar className="w-10 h-10">
@@ -81,8 +88,8 @@ export function FeedbackView({
           </div>
         </div>
         <Separator />
-        <div className="py-6 text-sm leading-loose flex justify-start h-full text-muted-foreground">
-          <p>Feedback: {feedback}</p>
+        <div className="py-6 text-sm leading-loose overflow-auto max-h-60 whitespace-pre-wrap text-muted-foreground">
+          <p>Feedback: {formattedFeedback}</p>
         </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <p>

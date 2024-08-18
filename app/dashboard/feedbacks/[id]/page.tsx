@@ -42,7 +42,7 @@ const Page = async ({ params }: Params) => {
               initialFeedback={feedbacks}
               initialSort={{
                 key: "feedback",
-                order: "desc",
+                order: "asc",
               }}
             />
           ) : (
