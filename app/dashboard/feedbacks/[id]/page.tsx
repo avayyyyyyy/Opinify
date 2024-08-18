@@ -41,8 +41,8 @@ const Page = async ({ params }: Params) => {
             <FeedbackTable
               initialFeedback={feedbacks}
               initialSort={{
-                key: "feedback",
-                order: "asc",
+                key: "createdAt",
+                order: "desc",
               }}
             />
           ) : (
