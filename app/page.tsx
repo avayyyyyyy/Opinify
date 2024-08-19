@@ -33,18 +33,17 @@ export default async function Home() {
         <BlurFade
           delay={time * 0.5}
           inView
-          className="flex items-center justify-center"
+          className="flex items-center justify-center m-auto"
         >
           <Link
-            className="mb-6"
             href={
               "https://peerlist.io/avayyyyyyy/project/opinify--feedback-collection-saas"
             }
           >
             <Image
-              src={"https://peerlist.io/images/week_badge_1.svg"}
-              width={100}
-              height={100}
+              src={"/peerlist.png"}
+              width={150}
+              height={150}
               alt="peerlist"
               className="w-28 h-28 md:h-40 md:w-40"
             />
@@ -149,7 +148,11 @@ export default async function Home() {
         <BlurFade delay={time * 1} inView className="flex justify-between">
           <HowToUse />
         </BlurFade>
-        <BlurFade delay={time * 1} inView className="flex justify-center">
+        <BlurFade
+          delay={time * 1}
+          inView
+          className="flex justify-center md:mb-10 mb-5"
+        >
           <Accordian />
         </BlurFade>
       </main>
