@@ -43,8 +43,8 @@ export default async function Home() {
           >
             <Image
               src={"https://peerlist.io/images/week_medal_1.svg"}
-              width={150}
-              height={150}
+              width={100}
+              height={100}
               alt="peerlist"
             />
           </Link>
