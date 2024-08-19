@@ -3,8 +3,13 @@ import DashboardCards from "@/components/DashboardCards";
 import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/db";
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 const Page = async () => {
   const user = await auth();
