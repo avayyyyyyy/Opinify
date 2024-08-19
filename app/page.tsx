@@ -22,7 +22,7 @@ export default async function Home() {
 
   return (
     <>
-      <main className="flex z-10 flex-col bg-black items-center mx-auto md:p-24 px-24   py-10">
+      <main className="flex z-10 flex-col bg-black items-center mx-auto md:p-24 px-24 py-10 md:py-4">
         <Particles
           className="absolute inset-0"
           quantity={100}
@@ -42,10 +42,11 @@ export default async function Home() {
             }
           >
             <Image
-              src={"https://peerlist.io/images/week_medal_1.svg"}
+              src={"https://peerlist.io/images/week_badge_1.svg"}
               width={100}
               height={100}
               alt="peerlist"
+              className="w-28 h-28 md:h-40 md:w-40"
             />
           </Link>
         </BlurFade>
