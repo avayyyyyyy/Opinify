@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
+import Head from "next/head";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -61,6 +62,9 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={`${inter.className}`}>
         <SessionProvider>
           <ThemeProvider
