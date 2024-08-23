@@ -79,14 +79,18 @@ export function FeedbackView({
         </div>
         <Separator />
         <div className="py-6 text-sm leading-loose overflow-x-hidden max-h-60 whitespace-pre-wrap text-wrap hyphens-auto text-muted-foreground hypens">
-          <p>Feedback: {feedback}</p>
+          <p>
+            <span className="font-medium text-white">Feedback:</span> {feedback}
+          </p>
         </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <p>
-            <span className="font-medium">Project ID:</span> {projectId}
+            <span className="font-medium text-white">Project ID:</span>{" "}
+            {projectId}
           </p>
           <p>
-            <span className="font-medium">Submitted:</span> {submitted}
+            <span className="font-medium text-white">Submitted:</span>{" "}
+            {submitted}
           </p>
         </div>
         <Separator />
