@@ -12,11 +12,11 @@ const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Feedback Collection SaaS | Opinify.in",
+    default: "Opinify: Real-Time Feedback Platform",
     template: "%s - Opinify.in",
   },
   description:
-    "Collect, manage, and analyze real-time user feedback with Opinify's cutting-edge platform. Enhance customer engagement and experience with data-driven insights and comprehensive feedback management tools.",
+    "Enhance customer engagement with Opinify's real-time feedback platform. Collect, manage, and analyze user insights to drive data-driven improvements.",
   twitter: {
     card: "summary_large_image",
     title: "Feedback Collection SaaS | Opinify.in",
@@ -64,6 +64,10 @@ export default async function RootLayout({
     <html lang="en">
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Enhance customer engagement with Opinify's real-time feedback platform. Collect, manage, and analyze user insights to drive data-driven improvements."
+        ></meta>
       </Head>
       <body className={`${inter.className}`}>
         <SessionProvider>
