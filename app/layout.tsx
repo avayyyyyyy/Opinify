@@ -11,21 +11,36 @@ import Head from "next/head";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.opinify.in"),
   title: {
-    default: "Opinify: Real-Time Feedback Platform",
+    default:
+      "Opinify: Real-Time Feedback Platform | Enhance Customer Engagement",
     template: "%s - Opinify.in",
   },
   description:
     "Enhance customer engagement with Opinify's real-time feedback platform. Collect, manage, and analyze user insights to drive data-driven improvements.",
   twitter: {
     card: "summary_large_image",
-    title: "Feedback Collection SaaS | Opinify.in",
+    title: "Opinify: Real-Time Feedback Platform | Enhance Customer Engagement",
     description:
-      "Collect, manage, and analyze real-time user feedback with Opinify's cutting-edge platform. Enhance customer engagement and experience with data-driven insights and comprehensive feedback management tools.",
+      "Enhance customer engagement with Opinify's real-time feedback platform. Collect, manage, and analyze user insights to drive data-driven improvements.",
+    images: ["https://utfs.io/f/9e53247a-090e-4b56-ae1e-03c9e4bff653-md47.png"],
+  },
+  openGraph: {
+    title: "Opinify: Real-Time Feedback Platform | Enhance Customer Engagement",
+    description:
+      "Enhance customer engagement with Opinify's real-time feedback platform. Collect, manage, and analyze user insights to drive data-driven improvements.",
+    url: "https://www.opinify.in",
+    siteName: "Opinify",
     images: [
-      // "https://utfs.io/f/8bb4fcc0-1962-4846-a103-629911dfe0dd-dfa5bb.png",
-      "https://utfs.io/f/9e53247a-090e-4b56-ae1e-03c9e4bff653-md47.png",
+      {
+        url: "https://utfs.io/f/9e53247a-090e-4b56-ae1e-03c9e4bff653-md47.png",
+        width: 1200,
+        height: 630,
+      },
     ],
+    locale: "en_US",
+    type: "website",
   },
   other: {
     "schema-org": JSON.stringify({
@@ -64,10 +79,6 @@ export default async function RootLayout({
     <html lang="en">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Enhance customer engagement with Opinify's real-time feedback platform. Collect, manage, and analyze user insights to drive data-driven improvements."
-        ></meta>
       </Head>
       <body className={`${inter.className}`}>
         <SessionProvider>
