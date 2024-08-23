@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,7 +9,7 @@ import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import NextTopLoader from "nextjs-toploader";
 
-const inter = Montserrat({ subsets: ["latin"] });
+const inter = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.opinify.in"),

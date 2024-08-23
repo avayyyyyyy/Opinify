@@ -6,6 +6,7 @@ import HowToUse from "@/components/HowToUse";
 import BlurFade from "@/components/magicui/blur-fade";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Particles from "@/components/magicui/particles";
+import TechStack from "@/components/TechStack";
 import { auth } from "@/lib/auth";
 import Image from "next/image";
 import Link from "next/link";
@@ -54,8 +55,8 @@ export default async function Home() {
           inView
           className="flex items-center justify-center"
         >
-          <div className="lg:text-7xl text-2xl text-center md:text-5xl lg:w-[80%] md:w-fit w-[80vw] shrink-0 text-transparent mb-8 bg-clip-text bg-gradient-to-br from-white to-gray-400">
-            Your Go-To Platform for Instant Feedbacks{" "}
+          <div className="lg:text-6xl md:w-[70vw] text-2xl text-center md:text-5xl w-[80vw] shrink-0 text-white mb-8 ">
+          Your Go-To Platform for Instant Feedbacks{" "}
             <span className="text-black">🚀</span>
           </div>
         </BlurFade>
@@ -64,9 +65,9 @@ export default async function Home() {
           inView
           className="flex items-center justify-center"
         >
-          <p className="md:text-sm text-xs w-[50vw] text-center text-gray-300 mb-8">
+          <p className="md:text-base md:w-[40vw] text-xs font-light text-center text-white mb-8">
             Effortlessly embed feedback forms on your website and access
-            detailed, real time insights through our intuitive dashboard.
+            detailed, real time insights through our <span className="font-bold">Opinify dashboard</span>.
           </p>
         </BlurFade>
         <BlurFade
@@ -131,6 +132,13 @@ export default async function Home() {
             delay={9}
           />
         </BlurFade>
+        {/* <BlurFade
+          delay={time * 1}
+          inView
+          className=""
+        >
+          <TechStack />
+        </BlurFade> */}
         <BlurFade
           delay={time * 6}
           inView
