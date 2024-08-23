@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -88,6 +89,12 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <NextTopLoader
+              color="#fff"
+              showSpinner={false}
+              initialPosition={0.08}
+              height={2}
+            />
             <Navbar />
             <div className="z-[10] overflow-x-hidden">{children}</div>
             <Footer />
