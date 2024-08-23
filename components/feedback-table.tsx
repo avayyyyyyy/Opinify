@@ -47,6 +47,34 @@ type FeedbackTableProps = {
   initialSort: SortOption;
 };
 
+function generateCSV(data: FeedbackItem[]): string {
+  const headers = ["Name", "Email", "Feedback", "Rating", "Created At"];
+  const rows = data.map((item) => [
+    item.name,
+    item.email,
+    item.feedback,
+    item.rating.toString(),
+    item.createdAt.toISOString(),
+  ]);
+
+  return [headers.join(","), ...rows.map((row) => row.join(","))].join("\n");
+}
+
+function downloadCSV(data: FeedbackItem[]) {
+  const csv = generateCSV(data);
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  if (link.download !== undefined) {
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", "feedback_data.csv");
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+}
+
 export function FeedbackTable({
   initialFeedback,
   initialSort,
@@ -90,35 +118,45 @@ export function FeedbackTable({
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-x-2 justify-between mb-4">
           <Input
             placeholder="Search feedback..."
             className="bg-white dark:bg-black"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="shrink-0">
-                <ArrowUpDownIcon className="w-4 h-4 mr-2" />
-                Sort by
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-[200px]" align="end">
-              <DropdownMenuRadioGroup
-                value={sort.key}
-                onValueChange={(key) => handleSort(key as keyof FeedbackItem)}
-              >
-                <DropdownMenuRadioItem value="name">Name</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="rating">
-                  Rating
-                </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="createdAt">
-                  Created At
-                </DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex gap-x-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="shrink-0">
+                  <ArrowUpDownIcon className="w-4 h-4 mr-2" />
+                  Sort by
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[200px]" align="end">
+                <DropdownMenuRadioGroup
+                  value={sort.key}
+                  onValueChange={(key) => handleSort(key as keyof FeedbackItem)}
+                >
+                  <DropdownMenuRadioItem value="name">
+                    Name
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="rating">
+                    Rating
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="createdAt">
+                    Created At
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Button
+              variant="outline"
+              onClick={() => downloadCSV(filteredFeedback)}
+            >
+              Export CSV <DownloadIcon className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
         <Table>
           <TableHeader>
@@ -171,7 +209,6 @@ export function FeedbackTable({
                     : item.email}
                 </TableCell>
                 <TableCell>
-                  {" "}
                   {item.feedback.length > 10
                     ? `${item.feedback.slice(0, 10)}...`
                     : item.feedback}
@@ -191,7 +228,6 @@ export function FeedbackTable({
                 </TableCell>
                 <TableCell>{item.createdAt.toDateString()}</TableCell>
                 <TableCell>
-                  {/* <Button variant={"outline"}>Manage</Button> */}
                   <FeedbackView
                     email={item.email}
                     feedback={item.feedback}
@@ -246,7 +282,28 @@ function StarIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12" />
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  );
+}
+
+function DownloadIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
     </svg>
   );
 }
