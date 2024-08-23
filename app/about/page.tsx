@@ -37,6 +37,7 @@ const Article1 = () => {
                 alt="About Hero"
                 width={1000}
                 height={500}
+                loading="lazy"
               />
               <h2 className="mt-12 text-3xl font-bold text-white">
                 Our Technology
