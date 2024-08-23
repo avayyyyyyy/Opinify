@@ -24,14 +24,6 @@ type FeedbackViewProps = {
   avatarSrc?: string;
 };
 
-// Function to split long text without spaces
-const splitLongText = (text: string, maxLength: number = 50): string => {
-  if (text.length <= maxLength) return text;
-
-  const regex = new RegExp(`.{1,${maxLength}}`, "g");
-  return text.match(regex)?.join("\n") || text;
-};
-
 export function FeedbackView({
   name,
   email,
@@ -53,8 +45,6 @@ export function FeedbackView({
       setLoading(false);
     }
   };
-
-  const formattedFeedback = splitLongText(feedback);
 
   return (
     <Dialog>
@@ -89,7 +79,7 @@ export function FeedbackView({
         </div>
         <Separator />
         <div className="py-6 text-sm leading-loose overflow-x-hidden max-h-60 whitespace-pre-wrap text-wrap hyphens-auto text-muted-foreground hypens">
-          <p>Feedback: {formattedFeedback}</p>
+          <p>Feedback: {feedback}</p>
         </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <p>
