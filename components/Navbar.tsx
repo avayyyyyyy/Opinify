@@ -1,5 +1,8 @@
 import React from "react";
-import AuthButtons, { MobileSheetButtons } from "./AuthButtons";
+import AuthButtons, {
+  MobileSheetButtonsWithAuth,
+  MobileSheetButtonsWithoutAuth,
+} from "./AuthButtons";
 import Link from "next/link";
 import {
   Sheet,
@@ -61,9 +64,11 @@ const Navbar = async () => {
                           </span>
                         </Link>
                       </Button>
+                      <MobileSheetButtonsWithAuth />
                     </div>
-                  ) : null}
-                  <MobileSheetButtons />
+                  ) : (
+                    <MobileSheetButtonsWithoutAuth />
+                  )}
                 </div>
                 {user ? (
                   <div>

@@ -17,7 +17,10 @@ const AuthButtons = () => {
 
   if (fetching) {
     return (
-      <Button variant={"ghost"} className="text-sm animate-pulse">
+      <Button
+        variant={"ghost"}
+        className="text-sm animate-pulse md:block hidden"
+      >
         loading...
       </Button>
     );
@@ -44,7 +47,7 @@ const AuthButtons = () => {
           </Link>
         </div>
       ) : (
-        <div className="flex gap-2 md:flex-row flex-col">
+        <div className="hidden md:flex items-center gap-2">
           <Button onClick={() => signIn("google")} variant="secondary">
             Sign in
           </Button>
@@ -61,7 +64,7 @@ const AuthButtons = () => {
 
 export default AuthButtons;
 
-export const MobileSheetButtons = () => {
+export const MobileSheetButtonsWithAuth = () => {
   return (
     <div className="flex gap-3 md:items-center md:flex-row flex-col text-start">
       {/* <div className="">
@@ -79,6 +82,21 @@ export const MobileSheetButtons = () => {
           Star on gihtub 🌟
         </Button>
       </Link>
+    </div>
+  );
+};
+
+export const MobileSheetButtonsWithoutAuth = () => {
+  return (
+    <div className="flex flex-col gap-2">
+      <Button onClick={() => signIn("google")} variant="secondary">
+        Sign in
+      </Button>
+      <Button asChild variant="outline">
+        <Link href="https://github.com/avayyyyyyy/opinify">
+          Star on gihtub 🌟
+        </Link>
+      </Button>
     </div>
   );
 };
