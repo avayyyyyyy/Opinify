@@ -88,7 +88,7 @@ export function FeedbackView({
           </div>
         </div>
         <Separator />
-        <div className="py-6 text-sm leading-loose overflow-x-hidden max-h-60 whitespace-pre-wrap text-wrap text-muted-foreground">
+        <div className="py-6 text-sm leading-loose overflow-x-hidden max-h-60 whitespace-pre-wrap text-wrap hyphens-auto text-muted-foreground hypens">
           <p>Feedback: {formattedFeedback}</p>
         </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
