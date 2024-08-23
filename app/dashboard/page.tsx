@@ -43,11 +43,7 @@ const Page = async () => {
           <Button disabled variant={"outline"}>
             Limit Exceeded
           </Button>
-        ) : (
-          <div className="hidden md:block">
-            <CreateProject />
-          </div>
-        )}
+        ) : null}
       </div>
       <hr />
       <div className="p-3 flex flex-wrap gap-6">

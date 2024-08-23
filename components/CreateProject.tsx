@@ -49,7 +49,7 @@ const CreateProject = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size={"sm"} className="flex items-center gap-2">
+        <Button size={"sm"} className="flex items-center gap-2 w-full">
           Create Project <SquarePlus size={16} />
         </Button>
       </DialogTrigger>

@@ -26,11 +26,15 @@ const AuthButtons = () => {
   return (
     <>
       {data?.user?.email ? (
-        <div className="flex gap-3 items-center">
-          <div className="block md:hidden">
+        <div className="flex gap-3 md:items-center md:flex-row flex-col text-start">
+          <div className="my-auto mt-2 md:mt-0">
             <CreateProject />
           </div>
-          <Button onClick={() => signOut()} variant="outline">
+          <Button
+            className="w-full hidden md:block"
+            onClick={() => signOut()}
+            variant="destructive"
+          >
             Sign out
           </Button>
           <Link href="https://github.com/avayyyyyyy/opinify">
@@ -40,7 +44,7 @@ const AuthButtons = () => {
           </Link>
         </div>
       ) : (
-        <div className="flex gap-2">
+        <div className="flex gap-2 md:flex-row flex-col">
           <Button onClick={() => signIn("google")} variant="secondary">
             Sign in
           </Button>
@@ -56,3 +60,25 @@ const AuthButtons = () => {
 };
 
 export default AuthButtons;
+
+export const MobileSheetButtons = () => {
+  return (
+    <div className="flex gap-3 md:items-center md:flex-row flex-col text-start">
+      {/* <div className="">
+        <CreateProject />
+      </div> */}
+      <Button
+        className="w-full"
+        onClick={() => signOut()}
+        variant="destructive"
+      >
+        Sign out
+      </Button>
+      <Link href="https://github.com/avayyyyyyy/opinify">
+        <Button asChild variant="outline">
+          Star on gihtub 🌟
+        </Button>
+      </Link>
+    </div>
+  );
+};
