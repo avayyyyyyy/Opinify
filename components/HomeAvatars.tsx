@@ -28,7 +28,7 @@ const HomeAvatars = async () => {
       <div className="z-0 flex mx-auto items-center -space-x-2 *:ring *:ring-white">
         {users.map((e, i) => (
           <Avatar key={i} className="z-0 size-8">
-            <AvatarImage src={e.image ?? ""} />
+            <AvatarImage src={e.image ?? ""} alt="user images" />
           </Avatar>
         ))}
       </div>
