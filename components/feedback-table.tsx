@@ -198,7 +198,7 @@ export function FeedbackTable({
                     name={item.name}
                     rating={item.rating}
                     projectId={item.id}
-                    submitted={item.createdAt.toDateString()}
+                    submitted={item.createdAt.toLocaleDateString()}
                   />
                 </TableCell>
               </TableRow>
