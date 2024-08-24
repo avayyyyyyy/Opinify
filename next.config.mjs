@@ -15,6 +15,7 @@ const nextConfig = {
         hostname: "cdn.freelogovectors.net",
       },
     ],
+   
   },
   async headers() {
     return [
@@ -37,6 +38,9 @@ const nextConfig = {
       },
     ];
   },
+  compiler: {
+    removeConsole: process.env.AUTH_TRUST_HOST !== "http://localhost:3000"  // Remove console.log in production
+}
 };
 
 export default nextConfig;
