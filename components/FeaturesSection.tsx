@@ -92,7 +92,7 @@ const FeatureSections = () => {
   return (
     <div className="my-12 min-w-[90vw] flex w-full flex-col items-center justify-center">
       <h1 className="mb-2 text-center text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
-        Opinify is not like any other feedback app.
+        Opinify is Not Like Any Other Feedback App.
       </h1>
       <p className="max-w-md text-center text-sm text-gray-600 dark:text-gray-400">
         Opinify is a free to use, and highly simplified feedback form
