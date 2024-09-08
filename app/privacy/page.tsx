@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
 };
 
+throw new Error("OK");
+
 const PrivacyPolicy = () => {
   return (
     <div>
