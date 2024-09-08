@@ -55,6 +55,13 @@ const Footer = () => {
           className=" text-zinc-500 underline hover:text-zinc-500 "
         >
           ShubhCodes
+        </a>
+        {" | "}
+        <a
+          href="https://opinify.in/privacy"
+          className=" text-zinc-500 underline hover:text-zinc-500 "
+        >
+          Privacy Policy
         </a>{" "}
       </p>
       <div className="flex gap-4">
