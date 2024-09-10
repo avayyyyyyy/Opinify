@@ -12,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
-import { ChartArea, MenuIcon, ReceiptIndianRupee } from "lucide-react";
+import { ChartArea, Info, MenuIcon, ReceiptIndianRupee } from "lucide-react";
 import { Button } from "./ui/button";
 import { auth } from "@/lib/auth";
 import { Card, CardContent } from "./ui/card";
@@ -61,6 +61,18 @@ const Navbar = async () => {
 
                           <span className="mx-2 text-sm font-medium">
                             Pricing
+                          </span>
+                        </Link>
+                      </Button>
+                      <Button className="w-full" asChild variant="outline">
+                        <Link
+                          className="flex items-center px-3 py-2 text-black transition-colors duration-300 transform rounded-lg dark:text-white/80 hover:bg-balck dark:hover:bg-balck  dark:hover:bg-gray-50/10 hover:text-white/50"
+                          href="/about"
+                        >
+                          <Info size={16} />
+
+                          <span className="mx-2 text-sm font-medium">
+                            About
                           </span>
                         </Link>
                       </Button>

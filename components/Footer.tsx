@@ -56,7 +56,7 @@ const Footer = () => {
         >
           ShubhCodes
         </a>
-        {" | "}
+        <span className="mx-2">|</span>
         <a
           href="https://opinify.in/privacy"
           className=" text-zinc-500 underline hover:text-zinc-500 "

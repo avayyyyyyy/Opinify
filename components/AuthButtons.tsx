@@ -30,6 +30,9 @@ const AuthButtons = () => {
     <>
       {data?.user?.email ? (
         <div className="flex gap-3 md:items-center md:flex-row flex-col text-start">
+          <Button className="w-full hidden md:block" asChild variant="outline">
+            <Link href={"/dashboard"}>Dashboard</Link>
+          </Button>
           <div className="my-auto mt-2 md:mt-0">
             <CreateProject />
           </div>
