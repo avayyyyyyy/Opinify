@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
@@ -106,6 +107,7 @@ export default async function RootLayout({
           </ThemeProvider>
         </SessionProvider>
         <Analytics />
+        <SpeedInsights />
         <div style={{ position: "fixed", bottom: "50px", right: "20px" }}>
           <widget-web-component projectid="clzqmvwjs0001ownulyf1v7iv"></widget-web-component>
         </div>
