@@ -37,7 +37,7 @@ const Page = async ({ params }: Params) => {
       return redirect("/");
     }
 
-    console.log("Prisma Feedback: ", prisma.feedback);
+    // console.log("Prisma Feedback: ", prisma.feedback);
 
     const feedbacks = await prisma.feedback.findMany({
       where: {
@@ -49,8 +49,8 @@ const Page = async ({ params }: Params) => {
       feedback.createdAt = new Date(feedback.createdAt);
     });
 
-    console.log("feedbacks: ", feedbacks);
-    console.log("id: ", params.id);
+    // console.log("feedbacks: ", feedbacks);
+    // console.log("id: ", params.id);
 
     return (
       <div className="w-screen h-full overflow-y-scroll">

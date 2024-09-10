@@ -35,7 +35,7 @@ const Sidebar = async () => {
 
   const progressLimit = (projects?.length * 100) / 5;
 
-  console.log(progressLimit);
+  // console.log(progressLimit);
 
   return (
     <div>

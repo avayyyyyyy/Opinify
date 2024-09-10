@@ -14,12 +14,12 @@ export async function POST(req: NextRequest) {
   try {
     const feedback = await req.json();
 
-    console.log("Body: ", feedback);
+    // console.log("Body: ", feedback);
 
     // Validate feedback data using zod
     const validation = feedbackSchema.safeParse(feedback);
 
-    console.log("validation", validation);
+    // console.log("validation", validation);
 
     if (!validation.success) {
       return NextResponse.json(
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    console.log("submitFeedback: ", submitFeedback);
+    // console.log("submitFeedback: ", submitFeedback);
 
     return NextResponse.json(
       {

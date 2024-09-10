@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const Page = async () => {
   const user = await auth();
 
-  console.log(user);
+  // console.log(user);
 
   if (!user) {
     return redirect("/");
@@ -32,7 +32,7 @@ const Page = async () => {
     },
   });
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="w-full min-h-[80vh]">

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { unparse } from "papaparse";
+
 import {
   Card,
   CardHeader,
@@ -26,16 +28,15 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { FeedbackView } from "./feedback-view";
-import { Separator } from "./ui/separator";
 
-type FeedbackItem = {
+interface FeedbackItem {
   id: string;
   name: string;
   email: string;
   feedback: string;
   rating: number;
   createdAt: Date;
-};
+}
 
 type SortOption = {
   key: keyof FeedbackItem;
@@ -48,31 +49,35 @@ type FeedbackTableProps = {
 };
 
 function generateCSV(data: FeedbackItem[]): string {
-  const headers = ["Name", "Email", "Feedback", "Rating", "Created At"];
-  const rows = data.map((item) => [
-    item.name,
-    item.email,
-    item.feedback,
-    item.rating.toString(),
-    item.createdAt.toISOString(),
-  ]);
-
-  return [headers.join(","), ...rows.map((row) => row.join(","))].join("\n");
+  return unparse(data, {
+    columns: ["name", "email", "feedback", "rating", "createdAt"],
+    quotes: true,
+    quoteChar: '"',
+    escapeChar: '"',
+    delimiter: ",",
+    header: true,
+    newline: "\n",
+  });
 }
 
-function downloadCSV(data: FeedbackItem[]) {
+function downloadCSV(
+  data: FeedbackItem[],
+  filename = "feedback_data.csv"
+): void {
   const csv = generateCSV(data);
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
   const link = document.createElement("a");
-  if (link.download !== undefined) {
-    const url = URL.createObjectURL(blob);
-    link.setAttribute("href", url);
-    link.setAttribute("download", "feedback_data.csv");
-    link.style.visibility = "hidden";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+  link.href = url;
+  link.download = filename;
+  link.style.display = "none";
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 }
 
 export function FeedbackTable({

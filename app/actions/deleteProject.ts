@@ -8,7 +8,7 @@ export const deleteProject = async (id: string) => {
     const user = await auth();
 
     if (!user?.user?.email) {
-      console.log("User not authenticated");
+      // console.log("User not authenticated");
       return { success: false, error: "User not authenticated" };
     }
 
@@ -23,7 +23,7 @@ export const deleteProject = async (id: string) => {
     });
 
     if (!userRecord?.id) {
-      console.log("User ID not found");
+      // console.log("User ID not found");
       return { success: false, error: "User ID not found" };
     }
 
@@ -36,7 +36,7 @@ export const deleteProject = async (id: string) => {
     });
 
     if (!project) {
-      console.log("Project not found");
+      // console.log("Project not found");
       return { success: false, error: "Project not found" };
     }
 
@@ -47,7 +47,7 @@ export const deleteProject = async (id: string) => {
       },
     });
 
-    console.log("Deleted project:", deletedProject);
+    // console.log("Deleted project:", deletedProject);
 
     return { success: true };
   } catch (error) {

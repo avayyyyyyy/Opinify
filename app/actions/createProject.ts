@@ -27,7 +27,7 @@ export const submitProject = async ({
   });
 
   if (projects.length >= 5) {
-    console.log("Maximum project limit reached");
+    // console.log("Maximum project limit reached");
     return { success: false };
   }
 
@@ -45,11 +45,11 @@ export const submitProject = async ({
     });
 
     if (!data.success) {
-      console.log("Invalid data");
+      // console.log("Invalid data");
       throw new Error("Invalid data");
     }
     if (!findUser?.id) {
-      console.log("User not found");
+      // console.log("User not found");
       throw new Error("User not found");
     }
 
@@ -63,15 +63,15 @@ export const submitProject = async ({
     });
 
     if (!dbSave) {
-      console.log("Failed to save data");
+      // console.log("Failed to save data");
       throw new Error("Failed to save data");
     }
 
-    console.log("Project saved:", dbSave);
+    // console.log("Project saved:", dbSave);
 
     return { success: true, projectId: dbSave.id };
   } catch (error) {
-    console.log("Error:", error);
+    // console.log("Error:", error);
     return { success: false };
   }
 };

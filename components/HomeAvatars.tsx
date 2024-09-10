@@ -21,7 +21,7 @@ const HomeAvatars = async () => {
   const users = await getFiveUsers();
   const projectLength = await allProjectCount();
 
-  console.log(projectLength);
+  // console.log(projectLength);
 
   return (
     <div className="flex flex-col">
