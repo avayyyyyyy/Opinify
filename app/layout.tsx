@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -9,7 +10,10 @@ import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import NextTopLoader from "nextjs-toploader";
 
-const inter = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
+const inter = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.opinify.in"),
@@ -101,6 +105,7 @@ export default async function RootLayout({
             <Toaster richColors closeButton duration={4000} />
           </ThemeProvider>
         </SessionProvider>
+        <Analytics />
         <div style={{ position: "fixed", bottom: "50px", right: "20px" }}>
           <widget-web-component projectid="clzqmvwjs0001ownulyf1v7iv"></widget-web-component>
         </div>
