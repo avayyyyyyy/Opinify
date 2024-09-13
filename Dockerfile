@@ -1,9 +1,10 @@
 FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /myapp
 
 COPY package*.json ./
 COPY prisma ./prisma/
+COPY next.config.mjs ./next.config.mjs
 
 RUN npm install
 
@@ -14,6 +15,6 @@ RUN npm run build
 
 EXPOSE 3000
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 
 CMD ["npm", "start"]

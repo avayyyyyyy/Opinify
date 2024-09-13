@@ -40,6 +40,9 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: process.env.AUTH_TRUST_HOST !== "http://localhost:3000"  // Remove console.log in production
+},
+"scripts": {
+    "dev": "WATCHPACK_POLLING=true next dev",
 }
 };
 
