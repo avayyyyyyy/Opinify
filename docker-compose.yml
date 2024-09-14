@@ -1,27 +1,26 @@
 version: '3.8'
 services:
-  myapp:
-    build: .
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
-      - CHOKIDAR_USEPOLLING=true
-      - WATCHPACK_POLLING=true 
-      - NODE_ENV=development
       - DATABASE_URL=postgresql://user:password@db:5432/opinify
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
       - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
       - AUTH_TRUST_HOST=${AUTH_TRUST_HOST}
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
     depends_on:
       - db
-    command: sh -c "npx prisma migrate deploy && npm start"
     volumes:
-      - ./app:/myapp/app
-      - ./components:/myapp/components
-      - ./lib:/myapp/lib
-      - ./prisma:/myapp/prisma
-      - ./public:/myapp/public
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    command: sh -c "npx prisma migrate deploy && npm run dev"
 
   db:
     image: postgres:13
@@ -29,12 +28,8 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=opinify
-      - CHOKIDAR_USEPOLLING=true
-      - WATCHPACK_POLLING=true 
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
   postgres_data:
-
-  
