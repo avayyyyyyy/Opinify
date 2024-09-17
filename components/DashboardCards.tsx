@@ -15,7 +15,7 @@ const DashboardCards = ({
   name: string;
 }) => {
   return (
-    <div className="border md:max-w-72 w-full px-4 flex flex-col transition-all ease-in-out gap-y-2 py-3 rounded-md mx-auto md:mx-0">
+    <div className="border md:max-w-72 w-full px-4 flex flex-col transition-all ease-in-out gap-y-2 py-3 rounded-md overflow-hidden mx-auto md:mx-0">
       <div className="text-md block">{name}</div>
       <hr />
       <Link
@@ -23,13 +23,12 @@ const DashboardCards = ({
         target="_blank"
         className="text-xs text-blue-500 font-light"
       >
-        {title}
+        {title.length > 35 ? `${title.slice(0, 35)}...` : title}
       </Link>
       <div className="block text-xs text-white/70 font-light">
         {description.length > 40
-          ? `${description.slice(0, 40)}..`
+          ? `${description.slice(0, 40)}...`
           : description}
-        .
       </div>
       {/* <div className="flex items-center gap-2">
         {[...Array(5)].map((_, index) => (

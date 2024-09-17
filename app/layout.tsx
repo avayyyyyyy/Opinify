@@ -108,13 +108,10 @@ export default async function RootLayout({
         </SessionProvider>
         <Analytics />
         <SpeedInsights />
-        <div style={{ position: "fixed", bottom: "50px", right: "20px" }}>
+        <div style={{ position: "fixed", bottom: "70px", right: "40px" }}>
           <widget-web-component projectid="clzqmvwjs0001ownulyf1v7iv"></widget-web-component>
         </div>
-        <script
-          async
-          src="https://opinify-widget-w24d.vercel.app/widget.umd.js"
-        ></script>
+        <script async src="https://widget.opinify.in/widget.umd.js"></script>
       </body>
     </html>
   );

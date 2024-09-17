@@ -16,7 +16,7 @@ const EmbedCodeTabs = ({ id }: { id: string }) => {
   // </div>
 
   // Include your UMD build 
-  <script src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
+  <script src="https://widget.opinify.in/widget.umd.js"></script>
 </body>
 
 // </> This code is also compatible in React! </>
@@ -45,7 +45,7 @@ declare global {
     <widget-web-component projectid="${id}"></widget-web-component>
   // </div>
 
-  <script async src="https://opinify-widget-w24d.vercel.app/widget.umd.js"></script>
+  <script async src="https://widget.opinify.in/widget.umd.js"></script>
 </body>
 
 
@@ -57,7 +57,7 @@ declare global {
 
   return (
     <>
-      <Separator className="my-3" />
+      <Separator className="my-2" />
       <div className="mx-6 flex items-center justify-between">
         <div>
           <h1 className="md:text-3xl text-xl font-bold">Embed Code</h1>

@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 import EmbedCodeTabs from "@/components/CodeTabs"; // Adjust the path as needed
 import { Metadata } from "next";
+import Markdown from "react-markdown";
 
 interface Params {
   params: { id: string };
@@ -49,12 +50,22 @@ const Page = async ({ params }: Params) => {
       feedback.createdAt = new Date(feedback.createdAt);
     });
 
-    // console.log("feedbacks: ", feedbacks);
+    console.log("feedbacks: ", feedbacks);
     // console.log("id: ", params.id);
 
     return (
       <div className="w-screen h-full overflow-y-scroll">
-        <div>
+        {/* <div className="p-4 border rounded-lg m-2">
+          <div className="text-2xl font-bold mb-2">
+            What our expert thinks about you website 🤖
+          </div>
+          <div className="text-sm text-zinc-400">
+            <Markdown>
+              {`"general_feedback": "The provided feedback data seems to lack substance and clarity. Most of the feedback entries appear to be test data with repetitive or nonsensical content. ", "specific_feedback": ["- **Feedback Content:**  The 'feedback' field often contains repeated strings (\"clzl2hbzl0002xqbah92ket38\") or meaningless sequences (\"jnjnjnjnjnjnj\"), which makes it difficult to derive any meaningful insights.  ", "- **User Information:**  Multiple entries share the same email address (\"jabhi465@gmail.com\"), potentially indicating test submissions or inaccurate data collection.", "- **Data Relevance:**  Without context about the website itself, it's challenging to provide specific recommendations based on the feedback. ", "- **Actionable Insights:**  To extract valuable guidance, focus on gathering specific and descriptive feedback from real users about their experience on the website. "], "recommendation": "Encourage users to provide detailed feedback on specific aspects of the website, such as design, usability, content, or functionality. This will help you identify areas for improvement and enhance the overall user experience."`}
+            </Markdown>
+          </div>
+        </div> */}
+        <div className="m-2">
           {feedbacks.length > 0 ? (
             <FeedbackTable
               initialFeedback={feedbacks}
