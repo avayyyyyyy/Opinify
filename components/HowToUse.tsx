@@ -10,7 +10,35 @@ import Link from "next/link";
 const HowToUse = () => {
   return (
     <>
-      <div>
+      <div className="min-w-[90vw] md:mt-10 flex w-full flex-col items-center justify-center">
+        <h1 className="mb-2 text-center w-[60vw] md:w-fit text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
+          How to Use Opinify?
+        </h1>
+        <p className="max-w-md text-center mb-4 text-sm text-gray-400 dark:text-gray-400">
+          Click on the video below to know how to use Opinify.
+        </p>
+        <div className=" aspect-video ">
+          <iframe
+            className=" h-full w-[60vw] rounded-lg"
+            src="https://www.youtube.com/embed/xF6oBcf18Hs?si=ZdVx1J_lmQmpym2q"
+            width="100%"
+            title="How to use YouTube video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default HowToUse;
+
+// Previous Code:
+
+{
+  /* <div>
         <div className="min-w-[90vw] mt-10 flex w-full flex-col items-center justify-center">
           <h1 className="mb-2 text-center w-[60vw] md:w-fit text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
             How to Use Opinify?
@@ -24,7 +52,6 @@ const HowToUse = () => {
             >
               Click Here ▶️
             </Link>
-            {/* </Button> */}
           </p>
           <div className="md:flex md:flex-row flex flex-col m-auto md:gap-x-10 mt-6">
             <div className="flex flex-col justify-center items-center">
@@ -83,74 +110,5 @@ const HowToUse = () => {
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
-};
-
-export default HowToUse;
-
-/*
-
-import Image from "next/image";
-import React from "react";
-import process1 from "../public/process1.png";
-import process2 from "../public/process2.png";
-import process3 from "../public/process3.png";
-
-const steps = [
-  {
-    title: "Process 1",
-    description: "Enter Website details",
-    imageSrc: process1,
-    imageAlt: "Step 1 image",
-  },
-  {
-    title: "Process 2",
-    description: "Create Project",
-    imageSrc: process2,
-    imageAlt: "Step 2 image",
-  },
-  {
-    title: "Process 3",
-    description: "Embed Code",
-    imageSrc: process3,
-    imageAlt: "Step 3 image",
-  },
-];
-
-const HowToUse = () => {
-  return (
-    <>
-      <div className="my-12 min-w-[90vw] mt-16 flex w-full flex-col items-center justify-center">
-        <h1 className="mb-2 text-center text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl">
-          How to generate your feedback form:
-        </h1>
-        <div className="flex gap-x-6 mt-6">
-          {steps.map((step, index) => (
-            <div key={index}>
-              <div className="max-w-md font-semibold text-center text-lg text-gray-400 dark:text-gray-100">
-                {step.title}
-              </div>
-              <div className="max-w-md text-center text-xs text-gray-300 dark:text-gray-300">
-                {step.description}
-              </div>
-              <Image
-                className="rounded-md p-1 mt-2 mx-auto"
-                src={step.imageSrc}
-                width={250}
-                height={250}
-                alt={step.imageAlt}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default HowToUse;
-
-
-*/
+      </div> */
+}

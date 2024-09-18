@@ -56,7 +56,7 @@ export default async function Home() {
           className="flex items-center justify-center"
         >
           <div className="lg:text-6xl md:w-[70vw] text-2xl text-center md:text-5xl w-[80vw] shrink-0 text-white mb-8 ">
-          Your Go-To Platform for Instant Feedbacks{" "}
+            Your Go-To Platform for Instant Feedbacks{" "}
             <span className="text-black">🚀</span>
           </div>
         </BlurFade>
@@ -67,7 +67,8 @@ export default async function Home() {
         >
           <p className="md:text-base md:w-[40vw] text-xs font-light text-center text-white mb-8">
             Effortlessly embed feedback forms on your website and access
-            detailed, real time insights through our <span className="font-bold">Opinify dashboard</span>.
+            detailed, real time insights through our{" "}
+            <span className="font-bold">Opinify dashboard</span>.
           </p>
         </BlurFade>
         <BlurFade
@@ -169,13 +170,15 @@ export default async function Home() {
           className="flex justify-center md:mb-10 mb-5"
         >
           <div className="min-w-[75vw] mt-10 flex w-full flex-col items-center justify-center">
-        <h1 className="mb-2 text-center text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
-          Click Here to Know More About Us.
-        </h1>
-        <p className="max-w-md text-center text-sm text-gray-400 dark:text-gray-400">
-          <Link  href="/about" className="hover:underline text-white">About Page</Link>
-        </p>
-        </div>
+            <h1 className="mb-2 text-center text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
+              Click Here to Know More About Us.
+            </h1>
+            <Link href="/about" className="hover:underline text-white">
+              <p className="max-w-md text-center mb-2 text-sm text-gray-400 dark:text-gray-400">
+                About Page
+              </p>
+            </Link>
+          </div>
         </BlurFade>
       </main>
     </>
