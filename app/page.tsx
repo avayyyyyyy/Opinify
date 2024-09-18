@@ -170,14 +170,14 @@ export default async function Home() {
           className="flex justify-center md:mb-10 mb-5"
         >
           <div className="min-w-[75vw] mt-10 flex w-full flex-col items-center justify-center">
-            <h1 className="mb-2 text-center text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
-              Click Here to Know More About Us.
-            </h1>
             <Link href="/about" className="hover:underline text-white">
-              <p className="max-w-md text-center mb-2 text-sm text-gray-400 dark:text-gray-400">
-                About Page
-              </p>
+              <h1 className="mb-2 text-center text-2xl font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 md:text-3xl ">
+                Click Here to Know More About Us
+              </h1>
             </Link>
+            {/* <p className="max-w-md text-center mb-2 text-sm text-gray-400 dark:text-gray-400">
+              About Page
+            </p> */}
           </div>
         </BlurFade>
       </main>
