@@ -17,9 +17,9 @@ const HowToUse = () => {
         <p className="max-w-md text-center mb-4 text-sm text-gray-400 dark:text-gray-400">
           Click on the video below to know how to use Opinify.
         </p>
-        <div className=" aspect-video border p-4 rounded-lg border-gray-700">
+        <div className=" aspect-video border p-4 rounded-lg md:w-[60vw] w-[80vw] border-gray-700">
           <iframe
-            className=" h-full w-[60vw] rounded-lg"
+            className=" h-full mx-auto w-full rounded-lg"
             src="https://www.youtube.com/embed/xF6oBcf18Hs?si=ZdVx1J_lmQmpym2q"
             width="100%"
             title="How to use YouTube video"
