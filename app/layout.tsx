@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import NextTopLoader from "nextjs-toploader";
+import Announcement from "@/components/Announcement";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ declare global {
         HTMLElement
       > & {
         projectid: string;
+        theme: string;
       };
     }
   }
@@ -87,6 +89,7 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={`${inter.className}`}>
+        <Announcement />
         <SessionProvider>
           <ThemeProvider
             attribute="class"
@@ -105,11 +108,15 @@ export default async function RootLayout({
             <Footer />
             <Toaster richColors closeButton duration={4000} />
           </ThemeProvider>
+          <Analytics />
+          <SpeedInsights />
         </SessionProvider>
-        <Analytics />
-        <SpeedInsights />
-        <div style={{ position: "fixed", bottom: "70px", right: "40px" }}>
-          <widget-web-component projectid="clzqmvwjs0001ownulyf1v7iv"></widget-web-component>
+        <div style={{ position: "fixed", bottom: "70px", right: "20px" }}>
+          <widget-web-component
+            theme="urbanWhisper"
+            website-name="Opinify.in 🚀"
+            projectid="clzqmvwjs0001ownulyf1v7iv"
+          ></widget-web-component>
         </div>
         <script async src="https://widget.opinify.in/widget.umd.js"></script>
       </body>

@@ -84,10 +84,10 @@ export function FeedbackView({
           </p>
         </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <p>
+          {/* <p>
             <span className="font-medium text-white">Project ID:</span>{" "}
             {projectId}
-          </p>
+          </p> */}
           <p>
             <span className="font-medium text-white">Submitted:</span>{" "}
             {submitted}

@@ -65,6 +65,18 @@ const Page = async ({ params }: Params) => {
             </Markdown>
           </div>
         </div> */}
+        <div className="flex text-sm gap-x-2 m-2 border border-red-800 text-red-400 rounded-lg p-4">
+          <div
+            className="font-bold
+           shrink-0"
+          >
+            🚨 Note:
+          </div>
+          <div className="">
+            Please embed the updated widget code from below and paste it in your
+            website. Thank you!
+          </div>
+        </div>
         <div className="m-2">
           {feedbacks.length > 0 ? (
             <FeedbackTable
