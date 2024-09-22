@@ -278,14 +278,18 @@ const CustomWidget: React.FC<CustomWidgetProps> = ({
 // Embed code generation and tabs
 interface EmbedCodeTabsProps {
   id: string;
+  websiteNameFromParent: string;
 }
 
-const EmbedCodeTabs: React.FC<EmbedCodeTabsProps> = ({ id }) => {
+const EmbedCodeTabs: React.FC<EmbedCodeTabsProps> = ({
+  id,
+  websiteNameFromParent,
+}) => {
   const [selectedTab, setSelectedTab] = useState<"html" | "nextjs">("html");
   const [selectedTheme, setSelectedTheme] =
     useState<keyof typeof themes>("solarFlare");
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
-  const [websiteName, setWebsiteName] = useState<string>("Your Website Name");
+  const [websiteName, setWebsiteName] = useState<string>(websiteNameFromParent);
 
   const getCodeString = (theme: string, websiteName: string): string => {
     const htmlCodeString = `
@@ -367,7 +371,7 @@ const EmbedCodeTabs: React.FC<EmbedCodeTabsProps> = ({ id }) => {
 
         {/* Widget preview with dynamic theme and website name */}
         <CustomWidget
-          websiteName={websiteName}
+          websiteName={websiteName || "Your Website Name"}
           theme={selectedTheme}
           isOpen={isWidgetOpen}
           onClose={() => setIsWidgetOpen(false)}

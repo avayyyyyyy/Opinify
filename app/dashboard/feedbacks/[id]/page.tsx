@@ -51,6 +51,7 @@ const Page = async ({ params }: Params) => {
     });
 
     console.log("feedbacks: ", feedbacks);
+    let projectName = await getProjectName(params.id);
     // console.log("id: ", params.id);
 
     return (
@@ -90,7 +91,7 @@ const Page = async ({ params }: Params) => {
             <h1 className="text-center my-6">No feedbacks found 🥲...</h1>
           )}
         </div>
-        <EmbedCodeTabs id={params.id} />
+        <EmbedCodeTabs id={params.id} websiteNameFromParent={projectName!} />
       </div>
     );
   } catch (error) {
