@@ -89,6 +89,12 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={`${inter.className}`}>
+        <NextTopLoader
+          color="#fff"
+          showSpinner={false}
+          initialPosition={0.08}
+          height={2}
+        />
         <Announcement />
         <SessionProvider>
           <ThemeProvider
@@ -97,12 +103,6 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <NextTopLoader
-              color="#fff"
-              showSpinner={false}
-              initialPosition={0.08}
-              height={2}
-            />
             <Navbar />
             <div className="z-[10] overflow-x-hidden">{children}</div>
             <Footer />
@@ -111,7 +111,14 @@ export default async function RootLayout({
           <Analytics />
           <SpeedInsights />
         </SessionProvider>
-        <div style={{ position: "fixed", bottom: "70px", right: "20px" }}>
+        <div
+          style={{
+            position: "fixed",
+            bottom: "70px",
+            right: "20px",
+            zIndex: 100000000000,
+          }}
+        >
           <widget-web-component
             theme="urbanWhisper"
             website-name="Opinify.in 🚀"
