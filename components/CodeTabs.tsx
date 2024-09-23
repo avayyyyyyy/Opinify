@@ -299,7 +299,7 @@ const EmbedCodeTabs: React.FC<EmbedCodeTabsProps> = ({
     const htmlCodeString = `
   <body>
     <div style="position: fixed; bottom: 15px; right: 15px">
-      <widget-web-component theme="${theme}" website-name="${websiteName}" projectid="${id}" />
+      <widget-web-component theme="${theme}" website-name="${websiteName}" projectid="${id}"></widget-web-component>
     </div>
   
     <script src="https://widget.opinify.in/widget.umd.js"></script>
