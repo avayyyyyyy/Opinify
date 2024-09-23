@@ -12,6 +12,15 @@ interface Params {
 }
 
 async function getProjectName(id: string) {
+  const isValidID = await prisma.project.findUnique({
+    where: {
+      id: id,
+    },
+  });
+
+  if (!isValidID) {
+    return redirect("/error");
+  }
   const projectName = await prisma.project.findUnique({
     where: {
       id: id,
@@ -37,8 +46,6 @@ const Page = async ({ params }: Params) => {
     if (!user) {
       return redirect("/");
     }
-
-    // console.log("Prisma Feedback: ", prisma.feedback);
 
     const feedbacks = await prisma.feedback.findMany({
       where: {

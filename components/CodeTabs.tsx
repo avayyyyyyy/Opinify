@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { funky } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { MessageCircle, Star, X, Send, Copy, Check } from "lucide-react";
+import { Star, X, Copy, Check } from "lucide-react";
 
 // Theme interfaces
 interface Theme {
@@ -172,9 +172,13 @@ const CustomWidget: React.FC<CustomWidgetProps> = ({
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-[100] p-4 bg-black bg-opacity-50">
+        <div
+          onClick={onClose}
+          className="fixed inset-0 flex items-center justify-center z-[0] p-4 bg-black bg-opacity-50"
+        >
           <div
-            className={`${currentTheme.secondary} rounded-2xl w-full max-w-[450px] shadow-2xl relative z-10 transition-all duration-300 ease-in-out transform scale-100 opacity-100`}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
+            className={`${currentTheme.secondary} rounded-2xl z-[50] w-full max-w-[450px] shadow-2xl relative transition-all duration-300 ease-in-out transform scale-100 opacity-100`}
           >
             <button
               className={`absolute top-4 right-4 p-1 rounded-full ${currentTheme.text} ${currentTheme.hover}`}

@@ -15,7 +15,7 @@ const DashboardCards = ({
   name: string;
 }) => {
   return (
-    <div className="border md:max-w-72 w-full px-4 flex flex-col transition-all ease-in-out gap-y-2 py-3 rounded-md overflow-hidden mx-auto md:mx-0">
+    <div className="border md:max-w-72 w-full px-4 flex flex-col transition-all border-white/20 hover:border-white/50 ease-in-out gap-y-2 py-3 rounded-md overflow-hidden mx-auto md:mx-0">
       <div className="text-md block">{name}</div>
       <hr />
       <Link
