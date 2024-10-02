@@ -6,6 +6,7 @@ import process3 from "../public/process3.png";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import HeroVideoDialog from "./ui/hero-video-dialog";
 
 const HowToUse = () => {
   return (
@@ -17,16 +18,14 @@ const HowToUse = () => {
         <p className="max-w-md text-center mb-4 text-sm text-gray-400 dark:text-gray-400">
           Click on the video below to know how to use Opinify.
         </p>
-        <div className=" aspect-video border p-4 rounded-lg md:w-[60vw] w-[80vw] border-gray-700">
-          <iframe
-            className=" h-full mx-auto w-full rounded-lg"
-            src="https://www.youtube.com/embed/xF6oBcf18Hs?si=ZdVx1J_lmQmpym2q"
-            width="100%"
-            title="How to use YouTube video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+        <div className=" aspect-video p-4 rounded-lg md:w-[60vw] w-[80vw]">
+          <HeroVideoDialog
+            className=""
+            animationStyle="top-in-bottom-out"
+            videoSrc="https://www.youtube.com/embed/xF6oBcf18Hs?si=ZdVx1J_lmQmpym2q"
+            thumbnailSrc="https://utfs.io/f/ZeS8ew97fvPDdqm7OoJIVfagUN25oEvtDLj9xFGmbKHS6rZc"
+            thumbnailAlt="How To Use Opinify - Tutorial"
+          />
         </div>
       </div>
     </>
