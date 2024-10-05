@@ -62,12 +62,6 @@ const AuthButtons = () => {
           >
             Sign out
           </Button>
-          <Link href="https://github.com/avayyyyyyy/opinify">
-            <RainbowButton>
-              <span className="font-semibold mr-1">{stars} 🌟</span> Star on
-              gihtub
-            </RainbowButton>
-          </Link>
         </div>
       ) : (
         <div className="hidden md:flex items-center gap-2">

@@ -36,7 +36,7 @@ const faqData = [
     value: "item-5",
     question: "Can I customize the feedback form to match my brand?",
     answer:
-      "As of now, Opinify doesn't offers customization options that allow you to adjust the look and feel of the feedback form to align with your brand's visual identity. But in future you can modify colors, fonts, and layout to ensure a seamless integration with your website or application.",
+      "As of now, Opinify only offers certain themes and color options that allow you to adjust the look and feel of the feedback form to align with your brand's visual identity. But in future you can modify it more like fonts, custom colors and layout to ensure a seamless integration with your website or application.",
   },
 ];
 
